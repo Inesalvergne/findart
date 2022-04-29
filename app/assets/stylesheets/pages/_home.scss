@@ -1,11 +1,12 @@
 .container-home-banner{
   display: flex;
   justify-content: space around;
-  margin-top: 20px;
+  background-color: #ffd6ba;
+  align-items: center;
 }// Specific CSS for your home-page
 
 .banner-home-img{
-  margin-left: 100px;
+  margin: 50px 0 100px 50px ;
   img {
     border-radius: 8px;
   }
@@ -13,5 +14,9 @@
 
 .banner-home-text{
   margin-left: 100px;
-  margin-top: 50px;
+}
+
+.container-home-cards {
+  margin-left: 100px;
+  margin-top: 20px;
 }
