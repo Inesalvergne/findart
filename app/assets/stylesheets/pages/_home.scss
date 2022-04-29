@@ -1,1 +1,23 @@
-// Specific CSS for your home-page
+.container-home-banner{
+  display: flex;
+  justify-content: space around;
+  background-color: #fff1e6;
+  align-items: center;
+}// Specific CSS for your home-page
+
+.banner-home-img{
+  margin: 50px 0 100px 50px ;
+  img{
+    width: 300px;
+    height: 350px;
+  }
+}
+
+.banner-home-text{
+  margin-left: 100px;
+}
+
+.container-home-cards {
+  margin-left: 100px;
+  margin-top: 20px;
+}
