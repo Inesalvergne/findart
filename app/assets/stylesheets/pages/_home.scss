@@ -1,4 +1,17 @@
 .container-home-banner{
   display: flex;
   justify-content: space around;
+  margin-top: 20px;
 }// Specific CSS for your home-page
+
+.banner-home-img{
+  margin-left: 100px;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.banner-home-text{
+  margin-left: 100px;
+  margin-top: 50px;
+}
