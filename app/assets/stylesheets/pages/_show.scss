@@ -19,3 +19,44 @@
   margin-right: 50px;
 
 }
+
+.container-owner-card{
+  h2{
+    margin-left: 150px;
+  }
+}
+.container-owner-info{
+  display: flex;
+  justify-content: space around;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 150px;
+  padding: 20px;
+  background-color: $light-blue;
+  border-radius: 4px;
+}
+
+.owner-bio{
+  margin-left: 50px;
+}
+
+.container-more-artworks{
+  display: flex;
+  align-items: center;
+
+  img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 50px;
+  }
+}
+
+
+.container-suggestions{
+    margin-left: 150px;
+
+    h2{
+      margin-bottom: 20px;
+    }
+}
