@@ -1,8 +1,6 @@
 class ArtPiecesController < ApplicationController
   skip_before_action :authenticate_user!, only: %I[index show]
 
-
-
   def new
     @artpieces = Artpiece.new
 
