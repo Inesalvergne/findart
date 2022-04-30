@@ -10,7 +10,7 @@ class ArtPiecesController < ApplicationController
   end
 
   def new
-    @artpieces = ArtPiece.new
+    @artpiece = ArtPiece.new
   end
 
   def create
@@ -31,7 +31,11 @@ class ArtPiecesController < ApplicationController
   def update
     @artpiece = ArtPiece.find(params[:id])
     @artpiece.update(artpiece_params)
-    redirect_to artpiece_path(@artpiece)
+    if @artpiece.save
+      redirect_to artpiece_path(@artpiece)
+    else
+      render :edit
+    end
   end
 
   private
