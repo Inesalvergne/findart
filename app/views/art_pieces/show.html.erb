@@ -1,0 +1,48 @@
+
+<div class="container-show-artpiece">
+
+    <div class="wrapper-show-img">
+      <%= image_tag "dummy-painting.jpg" %>
+    </div>
+
+    <div class="wrapper-show-description">
+      <h2> <%= @artpiece.title %> </h2>
+      <p> By <%= @artpiece.artist %> </p>
+      <p> <%= @artpiece.description %> </p>
+      <p class= "btn btn-info rounded-3"> <%= @artpiece.category %> </p>
+      <p> $<%= @artpiece.price_rate %> </p>
+    </div>
+
+</div>
+
+
+<div class="container-owner-card">
+
+  <h2> About the owner </h2>
+
+  <div class="container-owner-info">
+
+    <div class="avatar">
+        <%= image_tag "https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" , alt: "Avatar image" , class: "avatar" %>
+    </div>
+    <div class= "owner-bio">
+      <p><%= "#{@artpiece.user.first_name} #{@artpiece.user.last_name}" %></p>
+      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container-suggestions">
+
+  <h2> Explore more artworks </h2>
+
+  <div class="container-more-artworks">
+
+    <%= image_tag "dummy-paiting2.jpg" %>
+    <%= image_tag "dummy-paiting3.jpg" %>
+    <%= image_tag "dummy-paiting4.jpg" %>
+  </div>
+
+</div>
