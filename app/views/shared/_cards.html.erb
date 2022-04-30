@@ -1,11 +1,10 @@
-<% if @artpieces.nil? == false %>
   <div class="grid-cards">
     <% @artpieces.each do |artpiece| %>
       <div class="card">
-        <%= image_tag "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/60/bf/1b/60bf1bf2-265f-84dc-2d31-1d2ce52e9e5f/source/600x600bb.jpg", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img" %>
+        <%= link_to image_tag("https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/60/bf/1b/60bf1bf2-265f-84dc-2d31-1d2ce52e9e5f/source/600x600bb.jpg", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
         <div class="card-text">
           <div class="card-header-row">
-            <h3 class="card-title"><%= artpiece.title %></h3>
+            <h3><%= link_to artpiece.title, art_piece_path(artpiece), class: "card-title" %></h3>
             <h4 class="card-price"><%= "$#{artpiece.price_rate}/day" %></h4>
           </div>
           <p class="card-artist"><%= "By #{artpiece.artist}" %></p>
@@ -21,62 +20,3 @@
       </div>
     <% end %>
   </div>
-<!-- BELOW IS JUST PLACEHOLDER CODE THAT DOESNT USE ANY RAILS VARIABLES, IT'S JUST THERE TO MAKE THE HOME PAGE NOT CRASH -->
-<% else %>
-  <div class="grid-cards">
-    <div class="card">
-      <%= image_tag "https://d1ee3oaj5b5ueh.cloudfront.net/thumbs/350xAUTO_processed_art_2022_04_46f61763-9f9b-4707-b2ea-9839e33e9bf9-main-master.webp", alt: "Artwork", class: "card-img" %>
-      <div class="card-text">
-        <div class="card-header-row">
-          <h3 class="card-title">Painting</h3>
-          <h4 class="card-price">$100/day</h4>
-        </div>
-        <p class="card-artist">By Bob Jones</p>
-        <div class="card-categories">
-          <p>Painting</p>
-          <p>Modern</p>
-        </div>
-        <div class="card-user-row">
-          <%= image_tag "https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" , alt: "Avatar image" , class: "avatar" %>
-          <p>Kylie Table</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/39/31/20/39312010-b165-b877-5748-d7e26887c4eb/source/600x600bb.jpg", alt: "Artwork", class: "card-img" %>
-      <div class="card-text">
-        <div class="card-header-row">
-          <h3 class="card-title">Painting</h3>
-          <h4 class="card-price">$100/day</h4>
-        </div>
-        <p class="card-artist">By Bob Jones</p>
-        <div class="card-categories">
-          <p>Painting</p>
-          <p>Modern</p>
-        </div>
-        <div class="card-user-row">
-          <%= image_tag "https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" , alt: "Avatar image" , class: "avatar" %>
-          <p>Juan Parrot</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "https://d1ee3oaj5b5ueh.cloudfront.net/thumbs/350xAUTO_processed_art_2022_04_714ffe85-e34f-4651-b0f1-03e8ac9b3eb8-main-master.webp", alt: "Artwork", class: "card-img" %>
-      <div class="card-text">
-        <div class="card-header-row">
-          <h3 class="card-title">The </h3>
-          <h4 class="card-price">$100/day</h4>
-        </div>
-        <p class="card-artist">By Bob Jones</p>
-        <div class="card-categories">
-          <p>Painting</p>
-          <p>Modern</p>
-        </div>
-        <div class="card-user-row">
-          <%= image_tag "https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" , alt: "Avatar image" , class: "avatar" %>
-          <p>Tim Chair</p>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
