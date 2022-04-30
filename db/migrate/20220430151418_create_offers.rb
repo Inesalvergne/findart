@@ -5,8 +5,8 @@ class CreateOffers < ActiveRecord::Migration[6.1]
       t.string :end_date
       t.integer :total_price
       t.string :status
-      t.references :art_piece, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
+      t.references :art_piece, null: false, foreign_key: true
 
       t.timestamps
     end

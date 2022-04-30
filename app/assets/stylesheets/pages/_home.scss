@@ -1,23 +1,70 @@
-.container-home-banner{
+.custom-shape-divider-bottom-1650582608 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1650582608 svg {
+  position: relative;
+  display: block;
+  width: calc(131% + 1.3px);
+  height: 180px;
+}
+
+.custom-shape-divider-bottom-1650582608 .shape-fill {
+  fill: #ffffff;
+}
+
+.container-home{
+  position: relative;
+}
+
+.container-content-banner{
   display: flex;
   justify-content: space around;
-  background-color: #fff1e6;
+  background-color: $beige;
   align-items: center;
-}// Specific CSS for your home-page
+  padding: 100px auto;
+}
 
 .banner-home-img{
-  margin: 50px 0 100px 50px ;
+  margin: 80px 0 100px 200px;
   img{
-    width: 300px;
+    width: 400px;
     height: 350px;
+    z-index: 1;
+    position: relative;
   }
 }
 
 .banner-home-text{
-  margin-left: 100px;
+  margin-left: 150px;
+  margin-top: -50px;
+
+  h1{
+    font-family: $headers-font;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+
+  p{
+    font-family: $body-font;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
 }
 
 .container-home-cards {
-  margin-left: 100px;
+  margin-left: 150px;
+  margin-right: 150px;
   margin-top: 20px;
+
+  h2{
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 28px;
+  }
 }
