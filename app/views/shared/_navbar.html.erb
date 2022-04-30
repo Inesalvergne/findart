@@ -3,6 +3,7 @@
     <% if user_signed_in? %>
       <div class="d-flex justify-content-start">
         <%= image_tag "logo.png", alt: "FindArt logo", class: "navbar-logo me-4" %>
+        <%= link_to "FindArt", root_path, class: "navbar-brand navbar-bold" %>
         <a class="navbar-brand" href="#"><b>FindArt</b></a>
         <a class="navbar-brand" href="#">My offers</a>
         <a class="navbar-brand" href="#">My artworks</a>
@@ -26,8 +27,8 @@
       </div>
     <% else %>
       <div class="d-flex justify-content-start">
-        <%= image_tag "logo.png" , alt: "FindArt logo", class: "navbar-logo me-4" %>
-        <a class="navbar-brand" href="#"><b>FindArt</b></a>
+        <%= image_tag "logo.png", alt: "FindArt logo", class: "navbar-logo me-4" %>
+        <%= link_to "FindArt", root_path, class: "navbar-brand navbar-bold" %>
       </div>
       <div class="d-flex">
         <form class="d-flex">
