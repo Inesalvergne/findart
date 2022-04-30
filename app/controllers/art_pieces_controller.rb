@@ -12,7 +12,7 @@ class ArtpiecesController < ApplicationController
   @artpieces = ArtWorks.new(artpiece_params)
 
   if @artpieces.save
-  redirect_to artworks_create_path(@artwork)
+  redirect_to artworks_create_path(@artpiece)
 
   else render "new"
   end
