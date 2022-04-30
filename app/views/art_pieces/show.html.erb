@@ -1,15 +1,32 @@
 
 <div class="container-show-artpiece">
 
-  <div class="container-show-img">
+    <div class="wrapper-show-img">
+      <%= image_tag "dummy-painting.jpg" %>
+    </div>
+
+    <div class="wrapper-show-description">
+      <h2> <%= @artpiece.title %> </h2>
+      <p> By <%= @artpiece.artist %> </p>
+      <p> <%= @artpiece.description %> </p>
+      <p class= "btn btn-info rounded-3"> <%= @artpiece.category %> </p>
+      <p> $<%= @artpiece.price_rate %> </p>
+    </div>
+
+</div>
+
+
+<div class="container-owner-card">
+
+  <h2> About the owner </h2>
+
+  <div class="container-owner-info">
+
+    <div class="avatar">
+    </div>
+    <div class= "owner-bio">
+    </div>
 
   </div>
 
-  <div class="container-show-description">
-    <h2> <%= @artpiece.title %> </h2>
-    <p> <%= @artpiece.artist %> </p>
-    <p> <%= @artpiece.description %> </p>
-    <p> <%= @artpiece.category %> </p>
-    <p> <%= @artpiece.price_rate %> </p>
-  </div>
 </div>
