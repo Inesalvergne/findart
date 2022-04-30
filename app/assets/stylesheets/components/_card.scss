@@ -1,0 +1,46 @@
+.grid-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.card {
+  display: flex;
+}
+
+.card-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px 12px;
+}
+
+.card-header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+  gap: 20px;
+
+  p {
+    padding: 4px 12px;
+    background-color: $light-blue;
+    border-radius: 4px;
+  }
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-price {
+  font-weight: 300;
+}
