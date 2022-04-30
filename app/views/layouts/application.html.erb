@@ -13,8 +13,10 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
     <%= yield %>
-    <%= render "layouts/footer" %>
+    <%= render "shared/footer" %>
   </body>
 </html>
