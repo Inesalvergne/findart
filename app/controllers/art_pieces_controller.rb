@@ -1,25 +1,31 @@
-class ArtpiecesController < ApplicationController
+class ArtPiecesController < ApplicationController
+
+  def new
+    @artpieces = Artpiece.new
+  end
 
   def show
-  @artpieces = ArtWorks.find(params[:id])
+  @artpieces = Artpieces.find(params[:id])
   end
 
   def index
-  @artpieces = ArtWorks.all
+  @artpieces = ArtPieces.all
   end
 
   def create
-  @artpieces = ArtWorks.new(artpiece_params)
+  @artpieces = ArtPieces.new(artpiece_params)
 
   if @artpieces.save
-  redirect_to artworks_create_path(@artpiece)
+  redirect_to artpieces_create_path(@artpiece)
 
   else render "new"
   end
 
   private
+
 def artpieces_params
-  params.require(:artpieces).permit(:name, :rating)
+params.require(:artpieces).permit(:title, :artist, :images, :description,
+:creation_date, :category, :style, :price_rate, :owner_id)
 end
 
 end

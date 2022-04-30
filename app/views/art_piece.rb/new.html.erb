@@ -1,8 +1,17 @@
---add divs for styling--
+<div class = "container"
 
-<h1>Create a new art work</h1>
-<%= simple_form_for @artworks do |f| %>
-        <%= f.input :name %>
-        <%= f.input :rating %>
-        <%= f.submit class: 'btn btn-primary' %>
+<h1> Create a new art work </h1>
+
+<h5><%= simple_form_for @artworks do |f| %>
+
+        <%= f.input :title %>
+        <%= f.input :artist%>
+        <%= f.input :description%>
+        <%= f.input :category%>
+        <%= f.input :style%>
+        <%= f.input :price_rate%>
+        <%= f.input :image_url%>
+
+        <%= f.submit class: 'btn btn-primary' %></h5>
 <% end %>
+</div>
