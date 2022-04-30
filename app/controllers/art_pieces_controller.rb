@@ -1,4 +1,7 @@
 class ArtPiecesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %I[index show]
+
+
 
   def new
     @artpieces = Artpiece.new
@@ -6,11 +9,11 @@ class ArtPiecesController < ApplicationController
   end
 
   def show
-  @artpieces = Artpieces.find(params[:id])
+    @artpiece = ArtPiece.find(params[:id])
   end
 
   def index
-  @artpieces = ArtPieces.all
+  @artpieces = ArtPiece.all
   end
 
   def create
