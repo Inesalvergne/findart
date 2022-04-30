@@ -1,0 +1,8 @@
+--add divs for styling--
+
+<h1>Create a new art work</h1>
+<%= simple_form_for @artworks do |f| %>
+        <%= f.input :name %>
+        <%= f.input :rating %>
+        <%= f.submit class: 'btn btn-primary' %>
+<% end %>

@@ -3,5 +3,6 @@ class ArtPiece < ApplicationRecord
   has_many :offers
 
   validates :name, presence: true
+  validates :rating, presence: true
 
 end
