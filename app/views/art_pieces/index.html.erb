@@ -1,0 +1,11 @@
+<h1>Please take a look at all the art we have to offer!<h1>
+<% @artpieces.each do |artpiece| %>
+  <div class='container'>
+    <h4><%= link_to artpiece.artist, art_piece_path(artpiece)%></h4>
+    <h4><%= artpiece.description%></h4>
+    <h4><%= artpiece.creation_date%></h4>
+    <h4><%= artpiece.category%></h4>
+    <h4><%= artpiece.style%></h4>
+    <h4><%= artpiece.price_rate%></h4>
+  </div>
+<% end %>
