@@ -1,0 +1,10 @@
+<%= simple_form_for(@artpiece) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :artist %>
+  <%= f.input :description %>
+  <%= f.input :creation_date %>
+  <%= f.input :category %>
+  <%= f.input :style %>
+  <%= f.input :price_rate %>
+  <%= f.submit 'Create Art Piece' %>
+<% end %>
