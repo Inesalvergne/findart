@@ -11,9 +11,10 @@
       <p> By <%= @artpiece.artist %> </p>
       <p> <%= @artpiece.description %> </p>
       <p class= "btn btn-info rounded-3"> <%= @artpiece.category %> </p>
-      <p id= "price"> Rent it for $<%= @artpiece.price_rate %> a day </p>
+      <p id= "price"> Rent it for <span>$<%= @artpiece.price_rate %> </span>a day </p>
 
       <div class="wrapper-booking-form">
+        <hr>
         <h3> Book this artwork</h3>
         <%= simple_form_for [ @artpiece, @offer ] do |f| %>
           <%= f.input :start_date %>
