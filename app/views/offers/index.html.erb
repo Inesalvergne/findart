@@ -1,5 +1,7 @@
 <ul>
   <% @offers.each do |offer| %>
-    <li><%= "#{offer.user.email} - #{offer.art_piece.title} by #{offer.art_piece.artist}" %></li>
+    <% if offer.user == current_user %>
+      <li><%= "#{offer.user.first_name} #{offer.user.last_name} - #{offer.art_piece.title} by #{offer.art_piece.artist}" %></li>
+    <% end %>
   <% end %>
 </ul>
