@@ -13,17 +13,20 @@
 
 .container-card-bookings{
   overflow: hidden;
-  height: 120px;
+  height: 160px;
   width: 800px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  padding: 16px;
+  box-sizing: content-box;
 
   img{
-    width: 100px;
+    width: 120px;
     height: 100%;
+    object-fit: cover;
   }
 }
 
