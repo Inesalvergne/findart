@@ -8,9 +8,10 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @offer.total_price = ArtPiece.find(params[:art_piece.id]).price_rate
-    @offer.user = current_user
+    @offer.user = current_user.id
+    @offer.art_piece = ArtPiece.find(params[:art_piece.id])
     if @offer.save
-      redirect_to offer_path(@offer)
+      redirect_to art_piece(@offer.art_piece)
     else
       render :new
     end
