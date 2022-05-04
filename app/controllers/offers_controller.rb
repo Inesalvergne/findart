@@ -11,7 +11,7 @@ class OffersController < ApplicationController
     @offer.user = current_user.id
     @offer.art_piece = ArtPiece.find(params[:art_piece.id])
     if @offer.save
-      redirect_to art_piece(@offer.art_piece)
+      redirect_to art_piece_path(@offer.art_piece)
     else
       render :new
     end
