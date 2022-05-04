@@ -21,6 +21,12 @@ class ArtPiecesController < ApplicationController
 
   def show
     @artpiece = ArtPiece.find(params[:id])
+
+    @artpieces = []
+    3.times do
+      random = Random.new
+      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length))
+    end
   end
 
   def edit
@@ -41,9 +47,7 @@ class ArtPiecesController < ApplicationController
 
   private
 
-  def artpieces_params
-    params.require(:artpiece).permit(:title, :artist, :description,
-                                     :creation_date, :category, :style,
-                                     :price_rate)
+  def artpiece_params
+    params.require(:artpiece).permit(:title, :artist, :description, :creation_date, :category, :style, :price_rate)
   end
 end
