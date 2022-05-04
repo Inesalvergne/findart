@@ -1,0 +1,36 @@
+.container-mybookings{
+  margin: 50px 0 0 80px;
+
+  h2{
+    margin-bottom: 20px;
+  }
+}
+
+
+#bookings-number{
+  margin-bottom: 20px;
+}
+
+.container-card-bookings{
+  overflow: hidden;
+  height: 120px;
+  width: 800px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  img{
+    width: 100px;
+    height: 100%;
+  }
+}
+
+.wrapper-booking-info{
+  padding: 16px;
+
+  span{
+    font-weight: bold;
+  }
+}

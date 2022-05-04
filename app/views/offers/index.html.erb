@@ -1,5 +1,20 @@
-<ul>
-  <% @offers.each do |offer| %>
-    <li><%= "#{offer.user.email} - #{offer.art_piece.title} by #{offer.art_piece.artist}" %></li>
+
+<div class="container-mybookings">
+<h2> Welcome back, you </h2>
+
+<% if @offers.count >= 1 %>
+  <p><i class="fa-solid fa-paintbrush"></i> You've done <strong> <%= @offers.count %> </strong> booking requests </p>
+<% else %>
+    <p id="bookings-number"> You have no booking requests at the moment. Keep exploring! </p>
+<% end %>
+
+ <% @offers.each do |offer| %>
+      <div class="container-card-bookings">
+        <%= image_tag "dummy-painting.jpg"%>
+        <div class="wrapper-booking-info">
+          <p> <span> <%= offer.art_piece.title %> </span> by <%= offer.art_piece.artist %></p>
+        </div>
+      </div>
   <% end %>
-</ul>
+
+</div>
