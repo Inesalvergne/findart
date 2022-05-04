@@ -11,7 +11,7 @@
       <p> By <%= @artpiece.artist %> </p>
       <p> <%= @artpiece.description %> </p>
       <p class= "btn btn-info rounded-3"> <%= @artpiece.category %> </p>
-      <p> $<%= @artpiece.price_rate %> </p>
+      <p id= "price"> Rent it for $<%= @artpiece.price_rate %> a day </p>
 
       <div class="wrapper-booking-form">
         <h3> Book this artwork</h3>
@@ -25,8 +25,6 @@
     </div>
 
 </div>
-
-
 
 
 <div class="container-owner-card">
