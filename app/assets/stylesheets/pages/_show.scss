@@ -41,20 +41,12 @@
 }
 
 .container-more-artworks{
-  display: flex;
-  align-items: center;
-
-  img{
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    margin-right: 50px;
-  }
 }
 
 
 .container-suggestions{
     margin-left: 150px;
+    width: 1100px;
 
     h2{
       margin-bottom: 20px;
