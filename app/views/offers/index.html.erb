@@ -1,5 +1,4 @@
 <ul>
-<% raise %>
 <% @offers.each do |offer| %>
   <li><%= "#{offer.user.email} - #{offer.art_piece.title}  by #{offer.art_piece.artist}" %></li>
 <% end %>
