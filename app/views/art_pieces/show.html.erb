@@ -6,22 +6,25 @@
     </div>
 
     <div class="wrapper-show-description">
+
       <h2> <%= @artpiece.title %> </h2>
       <p> By <%= @artpiece.artist %> </p>
       <p> <%= @artpiece.description %> </p>
       <p class= "btn btn-info rounded-3"> <%= @artpiece.category %> </p>
-      <p> $<%= @artpiece.price_rate %> </p>
+      <p id= "price"> Rent it for <span>$<%= @artpiece.price_rate %> </span>a day </p>
+
+      <div class="wrapper-booking-form">
+        <hr>
+        <h3> Book this artwork</h3>
+        <%= simple_form_for [ @artpiece, @offer ] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Send a request", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
     </div>
 
-</div>
-
-<div class="container">
-  <h2>Make an Offer!</h2>
-  <%= simple_form_for [ @artpiece, @offer ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit "Submit Offer", class: "btn btn-primary" %>
-  <% end %>
 </div>
 
 
