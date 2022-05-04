@@ -3,13 +3,14 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    @art_piece = ArtPiece.find(params[:art_piece_id])
   end
 
   def create
     @offer = Offer.new(offer_params)
-    @offer.total_price = ArtPiece.find(params[:art_piece.id]).price_rate
+    @offer.total_price = ArtPiece.find(params[:art_piece_id]).price_rate
     @offer.user = current_user
-    @offer.art_piece = ArtPiece.find(params[:art_piece.id])
+    @offer.art_piece = ArtPiece.find(params[:art_piece_id])
     if @offer.save
       redirect_to art_piece_path(@offer.art_piece)
     else
@@ -20,6 +21,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:artpiece).permit(:start_date, :end_date, :status, :user, :art_piece)
+    params.require(:offer).permit(:start_date, :end_date, :status)
   end
 end
