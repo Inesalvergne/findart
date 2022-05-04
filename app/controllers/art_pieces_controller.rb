@@ -46,6 +46,10 @@ class ArtPiecesController < ApplicationController
     redirect_to art_pieces_path
   end
 
+  def my_artpieces
+    @artpieces = current_user.art_pieces
+  end
+
   private
 
   def artpiece_params

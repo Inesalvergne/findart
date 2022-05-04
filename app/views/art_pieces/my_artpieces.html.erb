@@ -1,0 +1,12 @@
+<h2>My Artpieces</h2>
+<div class="container-show-artpiece">
+  <div class="wrapper-show-description">
+    <% @artpieces.each do |artpiece| %>
+      <h2> <%= artpiece.title %> </h2>
+      <p> By <%= artpiece.artist %> </p>
+      <p> <%= artpiece.description %> </p>
+      <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
+      <p> $<%= artpiece.price_rate %> </p>
+    <% end %>
+  </div>
+</div>
