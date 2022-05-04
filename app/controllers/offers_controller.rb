@@ -8,7 +8,7 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @offer.total_price = ArtPiece.find(params[:art_piece.id]).price_rate
-    @offer.user = current_user.id
+    @offer.user = current_user
     @offer.art_piece = ArtPiece.find(params[:art_piece.id])
     if @offer.save
       redirect_to art_piece_path(@offer.art_piece)
