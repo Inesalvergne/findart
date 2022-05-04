@@ -21,6 +21,7 @@ class ArtPiecesController < ApplicationController
 
   def show
     @artpiece = ArtPiece.find(params[:id])
+    @offer = Offer.new
 
     @artpieces = []
     3.times do
@@ -36,7 +37,7 @@ class ArtPiecesController < ApplicationController
   def update
     @artpiece = ArtPiece.find(params[:id])
     @artpiece.update(artpiece_params)
-    redirect_to artpiece_path(@artpiece)
+    redirect_to art_piece_path(@artpiece)
   end
 
   def destroy
