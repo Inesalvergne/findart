@@ -19,8 +19,8 @@ User.create!(first_name: Faker::Name.first_name,
              address: Faker::Address.street_address,
              email: 'user2@mailmail.com', password: '1234567')
 
-categories = ['a', 'b', 'c']
-styles = ['d', 'e', 'f']
+categories = ['Paintings', 'Sculptures', 'Literature']
+styles = ['Renaissance', 'Gothic', 'Baroque']
 10.times do
   ArtPiece.create!(title: Faker::Name.name, artist: Faker::Artist.name,
                    description: Faker::Lorem.paragraph,
@@ -30,3 +30,20 @@ styles = ['d', 'e', 'f']
                    style: styles.sample, user: User.first)
 end
 puts 'Recreation complete!'
+
+
+ArtPiece.create(title: 'David' , artist: 'Michelangelo', description: 'David is a masterpiece of Renaissance
+  sculpture, created in marble between 1501 and 1504 by the Italian artist Michelangelo. David is a 5.17-metre
+   (17 ft 0 in) marble statue of the Biblical figure David, a favoured subject in the art of Florence.'
+
+creation_date: '2022/05/03' category: 'Sculpture', price_rate: '$200,000,000', style: 'Renaissance', user: User.rand)
+
+ArtPiece.create(title: f, artist:Michelangelo f, description: creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist:Michelangelo f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
+ArtPiece.create(title: f, artist: f, description, creation_date, category: df, price_rate:f, style: fd, user: User.rand)
