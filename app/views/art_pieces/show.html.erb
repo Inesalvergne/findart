@@ -2,7 +2,11 @@
 <div class="container-show-artpiece">
 
     <div class="wrapper-show-img">
-      <%= image_tag "dummy-painting.jpg" %>
+      <% if @artpiece.image_url.nil? %>
+         <%= image_tag "dummy-painting.jpg" %>
+      <% else %>
+         <%= image_tag(@artpiece.image_url) %>
+      <% end %>
     </div>
 
     <div class="wrapper-show-description">
