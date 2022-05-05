@@ -3,7 +3,7 @@
   <h2> Welcome back, <%= current_user.first_name %>! </h2>
 
   <% if @offers.count >= 1 %>
-    <p><i class="fa-solid fa-paintbrush"></i> You've done <strong> <%= @offers.count %> </strong> booking requests </p>
+    <p><i class="fa-solid fa-paintbrush"></i> You've done <strong> <%= current_user.offers.count %> </strong> booking requests </p>
   <% else %>
       <p id="bookings-number"> You have no booking requests at the moment. Keep exploring! </p>
   <% end %>
