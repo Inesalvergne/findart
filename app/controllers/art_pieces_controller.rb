@@ -3,6 +3,7 @@ class ArtPiecesController < ApplicationController
 
   def index
     @artpieces = ArtPiece.all
+    @artpiece = ArtPiece.new
   end
 
   def new
@@ -53,6 +54,6 @@ class ArtPiecesController < ApplicationController
   private
 
   def artpiece_params
-    params.require(:artpiece).permit(:title, :artist, :description, :creation_date, :category, :style, :price_rate)
+    params.require(:art_piece).permit(:title, :artist, :description, :creation_date, :category, :style, :price_rate)
   end
 end
