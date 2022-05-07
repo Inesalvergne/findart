@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :art_pieces
   has_many :offers
   has_many :art_pieces, through: :offers
 end
