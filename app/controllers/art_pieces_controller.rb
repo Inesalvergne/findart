@@ -32,7 +32,7 @@ class ArtPiecesController < ApplicationController
     @artpieces = []
     3.times do
       random = Random.new
-      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length)) unless ArtPiece.all.length.zero?
+      @artpieces << ArtPiece.find(random.rand(ArtPiece.first.id..ArtPiece.last.id)) unless ArtPiece.all.length.zero?
     end
   end
 
