@@ -1,7 +1,9 @@
 class ArtPiece < ApplicationRecord
   belongs_to :user
   has_many :offers
+  has_one_attached :cloud_image
 
+  validates :cloud_image, presence: true
   validates :title, presence: true
   validates :artist, presence: true
   validates :address, presence: true

@@ -2,7 +2,11 @@
 <div class="container-show-artpiece">
 
     <div class="wrapper-show-img">
+    <% if @artpiece.cloud_image.present? %>
+      <%= cl_image_tag @artpiece.cloud_image.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
       <%= image_tag "dummy-painting.jpg" %>
+    <% end %>
     </div>
 
     <div class="wrapper-show-description">
