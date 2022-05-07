@@ -19,6 +19,7 @@
             <%= simple_form_for(@artpiece) do |f| %>
             <%= f.input :title %>
             <%= f.input :artist %>
+            <%= f.input :cloud_image, as: :file %>
             <%= f.input :description %>
             <%= f.input :creation_date %>
             <%= f.input :category %>
