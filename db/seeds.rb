@@ -12,11 +12,9 @@ puts 'Destruction complete!'
 puts 'Recreating stuff now...'
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             address: Faker::Address.street_address,
              email: 'user1@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             address: Faker::Address.street_address,
              email: 'user2@mailmail.com', password: '1234567')
 
 categories = ['Paintings', 'Sculptures', 'Literature']
@@ -27,6 +25,7 @@ styles = ['Renaissance', 'Gothic', 'Baroque']
                    creation_date: Faker::Date.in_date_period,
                    category: categories.sample,
                    price_rate: (1..100).to_a.sample,
+                   address: Faker::Address.street_address,
                    style: styles.sample, user: User.first)
 end
 puts 'Recreation complete!'
