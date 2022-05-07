@@ -27,7 +27,7 @@ class ArtPiecesController < ApplicationController
     @artpieces = []
     3.times do
       random = Random.new
-      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length))
+      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length)) unless ArtPiece.all.length.zero?
     end
   end
 
@@ -48,7 +48,7 @@ class ArtPiecesController < ApplicationController
   end
 
   def my_artpieces
-    @artpieces = current_user.art_pieces
+    @artpieces = ArtPiece.all
   end
 
   private
