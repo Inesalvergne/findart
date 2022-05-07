@@ -11,6 +11,7 @@
     <% @offers.each do |offer| %>
       <% if offer.user == current_user %>
           <div class="container-card-bookings">
+            <div class="container-card-top">
               <%= image_tag "dummy-painting.jpg"%>
             <div class="wrapper-booking-info">
               <p> <span> <%= offer.art_piece.title %> </span> by <%= offer.art_piece.artist %></p>
@@ -18,6 +19,7 @@
               <p> <i class="fa-regular fa-calendar"></i> Requested from <%= offer.start_date%> to <%= offer.end_date %> </p>
               <p>  Total: $<%= offer.art_piece.price_rate %> </p>
             </div>
+          </div>
           </div>
       <% end %>
     <% end %>
