@@ -60,14 +60,14 @@ ActiveRecord::Schema.define(version: 2022_05_07_144117) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.string "start_date"
-    t.string "end_date"
     t.integer "total_price"
-    t.boolean "status", default: true
+    t.boolean "offer_confirmed", default: false
     t.bigint "user_id", null: false
     t.bigint "art_piece_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["art_piece_id"], name: "index_offers_on_art_piece_id"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
