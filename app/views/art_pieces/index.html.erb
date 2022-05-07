@@ -16,31 +16,7 @@
       Add an Artwork
     </button> %>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Put your own artworks for rent </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(@artpiece) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :artist %>
-            <%= f.input :cloud_image, as: :file %>
-            <%= f.input :description %>
-            <%= f.input :creation_date %>
-            <%= f.input :category, as: :select, collection: ArtPiece::CATEGORIES %>
-            <%= f.input :style, as: :select, collection: ArtPiece::STYLES %>
-            <%= f.input :address %>
-            <%= f.input :price_rate %>
-            <%= f.submit 'Create Art Piece', class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <div style="width: 100%; height: 600px;"
     data-controller="mapbox"
