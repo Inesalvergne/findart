@@ -12,4 +12,11 @@ class ArtPiece < ApplicationRecord
   validates :category, presence: true
   validates :style, presence: true
   validates :price_rate, presence: true, numericality: { greater_than: 0 }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_artist,
+                  against: [ :title, :artist ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
