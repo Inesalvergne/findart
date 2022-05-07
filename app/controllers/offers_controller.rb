@@ -24,7 +24,7 @@ class OffersController < ApplicationController
   def accept
     @offer = Offer.find(params[:id])
     @offer.update(offer_confirmed: "accepted")
-    redirect_to my_artpieces_art_pieces_path
+    redirect_to my_artpieces_art_pieces_path, notice: 'You have accepted the offer!'
   end
 
   def reject
