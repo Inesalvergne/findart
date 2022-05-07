@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     end
   end
   resources :offers, only: %i[index edit update destroy]
+  patch '/offers/:id/accepted', to: 'offers#accept', as: 'accepted_offer'
+  patch '/offers/:id/rejected', to: 'offers#reject', as: 'rejected_offer'
 end
