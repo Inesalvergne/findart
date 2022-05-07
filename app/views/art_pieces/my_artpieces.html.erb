@@ -1,26 +1,6 @@
 <h2>My Artpieces</h2>
 <div class="container-show-artpiece">
   <div class="wrapper-show-description">
-    <% @artpieces.each do |artpiece| %>
-      <h2> <%= artpiece.title %> </h2>
-      <p> By <%= artpiece.artist %> </p>
-      <p> <%= artpiece.description %> </p>
-      <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
-      <p> $<%= artpiece.price_rate %> </p>
-      <p> <%= "Offers made for this artwork: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %>
-      <ul>
-        <% artpiece.offers.each do |offer| %>
-          <% if offer.offer_confirmed != "rejected" %>
-            <li>
-              <%= "Booking requested from #{offer.user.first_name} #{offer.user.last_name}," %>
-              <%= "Date: #{offer.start_date} to #{offer.end_date}," %>
-              <%= "Price: $#{offer.total_price}" %>
-              <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
-              <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    <% end %>
+    <%= render "shared/card_list" %>
   </div>
 </div>
