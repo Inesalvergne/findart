@@ -8,6 +8,13 @@ class ArtPiecesController < ApplicationController
       @artpieces = ArtPiece.all
     end
 
+    @markers = @artpieces.geocoded.map do |artpiece|
+      {
+        lat: artpiece.latitude,
+        lng: artpiece.longitude
+      }
+    end
+
     @artpiece = ArtPiece.new
   end
 

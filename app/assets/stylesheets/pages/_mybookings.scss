@@ -13,12 +13,11 @@
 
 .container-card-bookings{
   overflow: hidden;
-  height: 160px;
   width: 800px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-bottom: 30px;
   padding: 16px;
   box-sizing: content-box;
@@ -28,6 +27,39 @@
     height: 100%;
     object-fit: cover;
   }
+}
+
+.container-card-top{
+  display: flex;
+  flex-direction: row;
+  height: 160px;
+  align-items: center;
+}
+
+.container-card-bottom{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.container-incoming-booking{
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-green;
+  margin-top: 20px;
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+}
+
+.booking-left {
+  display: flex;
+  flex-direction: row;
 }
 
 .wrapper-booking-info{
