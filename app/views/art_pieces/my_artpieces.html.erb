@@ -1,0 +1,24 @@
+<h2>My Artpieces</h2>
+<div class="container-show-artpiece">
+  <div class="wrapper-show-description">
+    <% @artpieces.each do |artpiece| %>
+      <h2> <%= artpiece.title %> </h2>
+      <p> By <%= artpiece.artist %> </p>
+      <p> <%= artpiece.description %> </p>
+      <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
+      <p> $<%= artpiece.price_rate %> </p>
+      <p> <%= "Offers made for this artwork: #{artpiece.offer_ids.count}" %>
+      <ul>
+        <% artpiece.offer_ids.each do |offer_id| %>
+          <% offer = Offer.find(offer_id) %>
+          <% user = User.find(offer.user_id) %>
+          <li>
+            <%= "Booking requested from #{user.first_name} #{user.last_name}," %>
+            <%= "Date: #{offer.start_date} to #{offer.end_date}," %>
+            <%= "Price: $#{offer.total_price}" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

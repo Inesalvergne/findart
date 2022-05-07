@@ -3,6 +3,7 @@ class ArtPiecesController < ApplicationController
 
   def index
     @artpieces = ArtPiece.all
+    @artpiece = ArtPiece.new
   end
 
   def new
@@ -21,34 +22,13 @@ class ArtPiecesController < ApplicationController
 
   def show
     @artpiece = ArtPiece.find(params[:id])
-<<<<<<< HEAD
-=======
     @offer = Offer.new
->>>>>>> 4b87d19116f6b9e37d4b8aa04da3959177de4288
 
     @artpieces = []
     3.times do
       random = Random.new
       @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length))
     end
-<<<<<<< HEAD
-  end
-
-  def new
-    @artpiece = ArtPiece.new
-  end
-
-  def create
-    @artpiece = ArtPiece.new(artpiece_params)
-    @art_piece.user = current_user
-
-    if @artpiece.save
-      redirect_to artpiece_path(@artpiece)
-    else
-      render :new
-    end
-=======
->>>>>>> 4b87d19116f6b9e37d4b8aa04da3959177de4288
   end
 
   def edit
@@ -58,15 +38,7 @@ class ArtPiecesController < ApplicationController
   def update
     @artpiece = ArtPiece.find(params[:id])
     @artpiece.update(artpiece_params)
-<<<<<<< HEAD
-    if @artpiece.save
-      redirect_to artpiece_path(@artpiece)
-    else
-      render :edit
-    end
-=======
     redirect_to art_piece_path(@artpiece)
->>>>>>> 4b87d19116f6b9e37d4b8aa04da3959177de4288
   end
 
   def destroy
@@ -75,15 +47,13 @@ class ArtPiecesController < ApplicationController
     redirect_to art_pieces_path
   end
 
+  def my_artpieces
+    @artpieces = current_user.art_pieces
+  end
+
   private
 
   def artpiece_params
-<<<<<<< HEAD
-    params.require(:artpiece).permit(:title, :artist, :description,
-                                      :creation_date, :category, :style,
-                                      :price_rate)
-=======
-    params.require(:artpiece).permit(:title, :artist, :description, :creation_date, :category, :style, :price_rate)
->>>>>>> 4b87d19116f6b9e37d4b8aa04da3959177de4288
+    params.require(:art_piece).permit(:title, :artist, :description, :creation_date, :category, :style, :address, :price_rate)
   end
 end
