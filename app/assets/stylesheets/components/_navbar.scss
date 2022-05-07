@@ -19,3 +19,11 @@
 .navbar-bold {
   font-weight: bold;
 }
+
+.icon-navbar {
+  font-size: 24px;
+  color: $dark-green;
+  &:hover {
+    cursor: pointer;
+  }
+}
