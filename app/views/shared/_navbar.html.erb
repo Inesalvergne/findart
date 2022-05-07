@@ -15,6 +15,7 @@
       <i class="fa-solid fa-circle-plus icon-navbar me-4" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
           <%# <input class="form-control me-2" type="search" placeholder="Search artworks..." aria-label="Search">
           <button class="btn btn-primary rounded-3" type="submit">Search</button> %>
+      </div>
         <!-- Add simple form helper for search bar here -->
         <div class="dropdown">
           <a href="#" class="navbar-end-avatar" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,3 +43,33 @@
     <% end %>
   </div>
 </div>
+
+
+<%# MODAL TO CREATE NEW ARTPIECE %>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> Put your own artworks for rent </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(@artpiece) do |f| %>
+            <%= f.input :title %>
+            <%= f.input :artist %>
+            <%= f.input :cloud_image, as: :file %>
+            <%= f.input :description %>
+            <%= f.input :creation_date %>
+            <%= f.input :category, as: :select, collection: ArtPiece::CATEGORIES %>
+            <%= f.input :style, as: :select, collection: ArtPiece::STYLES %>
+            <%= f.input :address %>
+            <%= f.input :price_rate %>
+            <%= f.submit 'Create Art Piece', class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
