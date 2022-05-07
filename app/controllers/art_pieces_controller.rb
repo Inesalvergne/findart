@@ -53,12 +53,14 @@ class ArtPiecesController < ApplicationController
   end
 
   def my_artpieces
-    @artpieces = ArtPiece.all
+    @artpieces = current_user.art_pieces
   end
 
   private
 
   def artpiece_params
-    params.require(:art_piece).permit(:title, :artist, :cloud_image, :description, :creation_date, :category, :style, :address, :price_rate)
+    params.require(:art_piece).permit(:title, :artist, :cloud_image,
+                                      :description, :creation_date, :category,
+                                      :style, :address, :price_rate)
   end
 end

@@ -2,25 +2,25 @@
 <div class="container-show-artpiece">
   <div class="wrapper-show-description">
     <% @artpieces.each do |artpiece| %>
-      <% if artpiece.user == current_user %>
-        <h2> <%= artpiece.title %> </h2>
-        <p> By <%= artpiece.artist %> </p>
-        <p> <%= artpiece.description %> </p>
-        <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
-        <p> $<%= artpiece.price_rate %> </p>
-        <p> <%= "Offers made for this artwork: #{artpiece.offer_ids.count}" %>
-        <ul>
-          <% artpiece.offer_ids.each do |offer_id| %>
-            <% offer = Offer.find(offer_id) %>
-            <% user = User.find(offer.user_id) %>
+      <h2> <%= artpiece.title %> </h2>
+      <p> By <%= artpiece.artist %> </p>
+      <p> <%= artpiece.description %> </p>
+      <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
+      <p> $<%= artpiece.price_rate %> </p>
+      <p> <%= "Offers made for this artwork: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %>
+      <ul>
+        <% artpiece.offers.each do |offer| %>
+          <% if offer.offer_confirmed != "rejected" %>
             <li>
-              <%= "Booking requested from #{user.first_name} #{user.last_name}," %>
+              <%= "Booking requested from #{offer.user.first_name} #{offer.user.last_name}," %>
               <%= "Date: #{offer.start_date} to #{offer.end_date}," %>
               <%= "Price: $#{offer.total_price}" %>
+              <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
+              <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
             </li>
           <% end %>
-        </ul>
-      <% end %>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
