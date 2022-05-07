@@ -7,16 +7,18 @@
       <p> <%= artpiece.description %> </p>
       <p class= "btn btn-info rounded-3"> <%= artpiece.category %> </p>
       <p> $<%= artpiece.price_rate %> </p>
-      <p> <%= "Offers made for this artwork: #{artpiece.offer_ids.count}" %>
+      <p> <%= "Offers made for this artwork: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %>
       <ul>
-        <% artpiece.offer_ids.each do |offer_id| %>
-          <% offer = Offer.find(offer_id) %>
-          <% user = User.find(offer.user_id) %>
-          <li>
-            <%= "Booking requested from #{user.first_name} #{user.last_name}," %>
-            <%= "Date: #{offer.start_date} to #{offer.end_date}," %>
-            <%= "Price: $#{offer.total_price}" %>
-          </li>
+        <% artpiece.offers.each do |offer| %>
+          <% if offer.offer_confirmed != "rejected" %>
+            <li>
+              <%= "Booking requested from #{offer.user.first_name} #{offer.user.last_name}," %>
+              <%= "Date: #{offer.start_date} to #{offer.end_date}," %>
+              <%= "Price: $#{offer.total_price}" %>
+              <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
+              <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     <% end %>

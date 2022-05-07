@@ -1,5 +1,4 @@
 class OffersController < ApplicationController
-  skip_before_action :authenticate_user!, only: %I[index show]
 
   def index
     @offers = Offer.all
@@ -20,6 +19,18 @@ class OffersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def accept
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_confirmed: "accepted")
+    redirect_to my_artpieces_art_pieces_path, notice: 'You have accepted the offer!'
+  end
+
+  def reject
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_confirmed: "rejected")
+    redirect_to my_artpieces_art_pieces_path
   end
 
   private

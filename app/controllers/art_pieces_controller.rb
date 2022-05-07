@@ -2,7 +2,12 @@ class ArtPiecesController < ApplicationController
   skip_before_action :authenticate_user!, only: %I[index show]
 
   def index
-    @artpieces = ArtPiece.all
+    if params[:query].present?
+      @artpieces = ArtPiece.search_by_title_and_artist(params[:query])
+    else
+      @artpieces = ArtPiece.all
+    end
+
     @artpiece = ArtPiece.new
   end
 
@@ -27,7 +32,7 @@ class ArtPiecesController < ApplicationController
     @artpieces = []
     3.times do
       random = Random.new
-      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length))
+      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length)) unless ArtPiece.all.length.zero?
     end
   end
 
@@ -54,6 +59,8 @@ class ArtPiecesController < ApplicationController
   private
 
   def artpiece_params
-    params.require(:art_piece).permit(:title, :artist, :description, :creation_date, :category, :style, :address, :price_rate)
+    params.require(:art_piece).permit(:title, :artist, :cloud_image,
+                                      :description, :creation_date, :category,
+                                      :style, :address, :price_rate)
   end
 end

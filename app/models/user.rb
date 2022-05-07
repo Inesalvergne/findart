@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :offers
-  has_many :art_pieces, through: :offers
+  # has_many :art_pieces, through: :offers
 end

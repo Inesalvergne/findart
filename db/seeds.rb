@@ -12,9 +12,11 @@ puts 'Destruction complete!'
 puts 'Recreating stuff now...'
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             address: Faker::Address.street_address,
              email: 'user1@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             address: Faker::Address.street_address,
              email: 'user2@mailmail.com', password: '1234567')
 
 categories = ['Paintings', 'Sculptures']

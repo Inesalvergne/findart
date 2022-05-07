@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @artpieces = []
     3.times do
       random = Random.new
-      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length))
+      @artpieces << ArtPiece.find(random.rand(1..ArtPiece.all.length)) unless ArtPiece.all.length.zero?
     end
   end
 end

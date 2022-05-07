@@ -2,11 +2,19 @@
   <div class="header-center">
     <h2> Explore the most beautiful artworks available to rent.</h2>
     <p> FindArt has an extensive selection of artworks. From the most popular artist to rare pieces you could only find here. Browse our collection and select what appeals you the most! </p>
+     <!-- Seart artpieces by title and artist -->
+  <%= form_tag art_pieces_path, method: :get, class:"search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "What are you looking for?"
+    %>
+    <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
+  <% end %>
         <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Add an Artwork
-    </button>
-
+    </button> %>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -19,6 +27,7 @@
             <%= simple_form_for(@artpiece) do |f| %>
             <%= f.input :title %>
             <%= f.input :artist %>
+            <%= f.input :cloud_image, as: :file %>
             <%= f.input :description %>
             <%= f.input :creation_date %>
             <%= f.input :category %>
@@ -33,6 +42,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 <div class="container-home-cards">
