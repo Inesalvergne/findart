@@ -1,0 +1,22 @@
+  <div class="grid-cards">
+    <% @artpieces.each do |artpiece| %>
+      <div class="card">
+        <%= link_to image_tag("https://source.unsplash.com/random/?painting", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
+        <div class="card-text">
+          <div class="card-header-row">
+            <h3><%= link_to artpiece.title, art_piece_path(artpiece), class: "card-title" %></h3>
+            <h4 class="card-price"><%= "$#{artpiece.price_rate}/day" %></h4>
+          </div>
+          <p class="card-artist"><%= "By #{artpiece.artist}" %></p>
+          <div class="card-categories">
+            <p><%= artpiece.category %></p>
+            <p><%= artpiece.style %></p>
+          </div>
+          <div class="card-user-row">
+            <%= image_tag "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
+            <p><%= "#{artpiece.user.first_name} #{artpiece.user.last_name}" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
