@@ -17,8 +17,11 @@
   margin-bottom: 20px;
 }
 
-// Main styles
-.search-form form {
-  position: relative;
-  width: 30rem;
+// search bar
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-left: 250px;
+  margin-top: 30px;
+  width: 25rem;
 }
