@@ -51,7 +51,7 @@ ArtPiece.create(title: 'The Card Players', artist: 'Paul Cézanne', description:
    a series of oil paintings
    by the French Post-Impressionist artist Paul Cézanne. Painted during Cézannes final period in the early 1890s,
   there are five paintings in the series. The versions vary in size,
-   the number of players, and the setting in which the game takes place.', creation_date: 1894 category: 'Painting', price_rate: 2_000_000, style: "Post-Impressionist",
+   the number of players, and the setting in which the game takes place.', creation_date: 1894, category: 'Painting', price_rate: 2_000_000, style: "Post-Impressionist",
   user: User.rand, image_url: "https://en.wikipedia.org/wiki/The_Card_Players#/media/File:Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg")
 
 ArtPiece.create(title: "The Scream", artist: "Edvard Munch", description: "The Scream is the popular
@@ -75,7 +75,7 @@ ArtPiece.create(title: 'Garçon à la Pipe', artist: 'Pablo Picasso', descriptio
  It was painted in 1905 when Picasso was 24 years old, during his Rose Period, soon after he settled in the Montmartre area of Paris.
   The painting depicts a Parisian adolescent boy who holds a pipe in his left hand and wears
  a garland of flowers on his head, surrounded by two floral decorations",
- creation_date: 1905 category: 'Painting', price_rate: 1_500_000,
+ creation_date: 1905, category: 'Painting', price_rate: 1_500_000,
  style: "Post-Impressionism", user: User.rand, image_url: "https://en
  .wikipedia.org/wiki/Gar%C3%A7on_%C3%A0_la_pipe#/media/File:Gar%C3%A7on_%C3%A0_la_pipe.jpg")
 
@@ -83,7 +83,7 @@ ArtPiece.create(title: 'Portrait of Dr. Gachet', artist: 'Vincent van Gogh', des
   Dr. Gachet is one of the most revered paintings by the Dutch artist Vincent van Gogh.
   It depicts Dr. Paul Gachet, a homeopathic doctor and artist
   with whom van Gogh resided following a spell in an asylum at Saint-Rémy-de-Provence."
-  creation_date: 1890 category: "Painting", price_rate: 1_100_000, style: "Post-Impressionism", user: User.rand,
+  creation_date: 1890, category: "Painting", price_rate: 1_100_000, style: "Post-Impressionism", user: User.rand,
   image_url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Portrait_of_Dr._Gachet.jpg")
 
 
@@ -98,7 +98,7 @@ ArtPiece.create(title: 'Portrait of Dr. Gachet', artist: 'Vincent van Gogh', des
    ArtPiece.create(title: "Tête", artist: 'Amedeo Modigliani', description:"Passionate about sculpture
   being an act of carving, Italian sculptor Amedeo Modigliani carved Tête from a single block of
   limestone. It was sold for $59.5 million to a private collector in 2010.",
-  creation_date: category: "Sculpture", price_rate: 1_000_000, style: "Surreal", user: User.rand,
+  creation_date: 1910, category: "Sculpture", price_rate: 1_000_000, style: "Surreal", user: User.rand,
   image_url: "https://www.artnews.com/wp-content/uploads/2019/04/unnamed-1.png")
 
 ArtPiece.create(title: "Balloon Dogs" , artist: "Jeff Koons", description:"Jeff Koons is renowned
