@@ -2,7 +2,12 @@ class ArtPiecesController < ApplicationController
   skip_before_action :authenticate_user!, only: %I[index show]
 
   def index
-    @artpieces = ArtPiece.all
+    if params[:query].present?
+      @artpieces = ArtPiece.search_by_title_and_artist(params[:query])
+    else
+      @artpieces = ArtPiece.all
+    end
+
     @artpiece = ArtPiece.new
   end
 
