@@ -7,6 +7,8 @@ ruby '3.0.3'
 gem 'dotenv-rails', groups: [:development, :test]
 # Cloudinary for image uploads
 gem 'cloudinary', '~> 1.16.0'
+# Search functionality
+gem 'pg_search', '~> 2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
 # Use postgresql as the database for Active Record
