@@ -17,7 +17,7 @@
   margin-bottom: 20px;
 }
 
-.container-home-cards {
+.wrapper-index-cards {
   margin-left: 50px;
   margin-right: 50px;
 
@@ -28,10 +28,6 @@
     margin-bottom: 50px;
     text-align: center;
   }
-}
-
-.container-index{
-  margin-top: 30px;
 }
 
 
@@ -46,4 +42,17 @@
 
 .container-index{
   display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+
+.wrapper-mapbox {
+
+}
+.mapboxgl-map{
+  width: 600px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0;
 }
