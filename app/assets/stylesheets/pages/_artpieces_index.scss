@@ -18,8 +18,8 @@
 }
 
 .wrapper-index-cards {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 20px;
+  margin-right: 5px;
 
   h2{
     font-family: $headers-font;
@@ -42,14 +42,10 @@
 
 .container-index{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 30px;
 }
 
-
-.wrapper-mapbox {
-
-}
 .mapboxgl-map{
   width: 600px;
   height: 100vh;
