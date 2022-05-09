@@ -10,6 +10,7 @@
 
     <% @offers.each do |offer| %>
       <% if offer.user == current_user %>
+        <%= link_to art_piece_path(offer.art_piece), class: "text-decoration-none text-dark" do %>
           <div class="container-card-bookings">
             <div class="container-card-top">
               <% if offer.art_piece.cloud_image.present? %>
@@ -24,6 +25,7 @@
               <p>  Total: $<%= offer.art_piece.price_rate %> </p>
             </div>
           </div>
+        <% end %>
           </div>
       <% end %>
     <% end %>

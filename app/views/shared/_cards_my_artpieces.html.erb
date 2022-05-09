@@ -1,18 +1,20 @@
 <% @artpieces.each do |artpiece| %>
   <% if artpiece.user == current_user %>
     <div class="container-card-bookings">
-      <div class="container-card-top">
-        <% if artpiece.cloud_image.present? %>
-          <%= cl_image_tag artpiece.cloud_image.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag "dummy-painting.jpg" %>
-        <% end %>
-        <div class="wrapper-booking-info">
-          <p> <span> <%= artpiece.title %> </span> by <%= artpiece.artist %></p>
-          <p> <i class="fa-regular fa-user"></i> Owned by <%= artpiece.user.first_name %> </p>
-          <p>  Total: $<%= artpiece.price_rate %> </p>
+      <%= link_to art_piece_path(artpiece), class: "text-decoration-none text-dark" do %>
+        <div class="container-card-top">
+          <% if artpiece.cloud_image.present? %>
+            <%= cl_image_tag artpiece.cloud_image.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag "dummy-painting.jpg" %>
+          <% end %>
+          <div class="wrapper-booking-info">
+            <p> <span> <%= artpiece.title %> </span> by <%= artpiece.artist %></p>
+            <p> <i class="fa-regular fa-user"></i> Owned by <%= artpiece.user.first_name %> </p>
+            <p>  Total: $<%= artpiece.price_rate %> </p>
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class="container-card-bottom">
         <p><b><%= "Incoming bookings: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %></b></p>
         <% artpiece.offer_ids.each do |offer_id| %>
