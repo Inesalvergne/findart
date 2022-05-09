@@ -11,6 +11,26 @@
   width: 250px;
 }
 
+.card:hover{
+  transform: scale(1.03);
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+
+  img{
+    opacity: 0.9;
+  }
+}
+
+.card-overview:hover{
+  transform: scale(1.03);
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+
+  img{
+    opacity: 0.9;
+  }
+}
+
 // ONLY FOR HOME PAGE AND SHOW PAGE
 .card-overview {
   width: 350px;
