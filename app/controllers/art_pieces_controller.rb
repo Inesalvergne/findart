@@ -15,12 +15,12 @@ class ArtPiecesController < ApplicationController
       }
     end
 
-    @artpiece = ArtPiece.new
+    # @artpiece = ArtPiece.new
   end
 
-  def new
-    @artpiece = ArtPiece.new
-  end
+  # def new
+  #   @artpiece = ArtPiece.new
+  # end
 
   def create
     @artpiece = ArtPiece.new(artpiece_params)
