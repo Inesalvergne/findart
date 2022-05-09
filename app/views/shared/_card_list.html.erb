@@ -2,7 +2,11 @@
   <% if artpiece.user == current_user %>
     <div class="container-card-bookings">
       <div class="container-card-top">
-        <%= image_tag "dummy-painting.jpg"%>
+        <% if artpiece.cloud_image.present? %>
+          <%= cl_image_tag artpiece.cloud_image.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "dummy-painting.jpg" %>
+        <% end %>
         <div class="wrapper-booking-info">
           <p> <span> <%= artpiece.title %> </span> by <%= artpiece.artist %></p>
           <p> <i class="fa-regular fa-user"></i> Owned by <%= artpiece.user.first_name %> </p>
@@ -27,8 +31,12 @@
                 </div>
               </div>
               <div class="booking-right">
-                <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
-                <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
+                <% if offer.offer_confirmed == "accepted" %>
+                  <p class="booking-accepted"><i class="fas fa-check"></i> Accepted</p>
+                <% else %>
+                  <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
+                  <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
+                <% end %>
               </div>
             </div>
           <% end %>

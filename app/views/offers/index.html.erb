@@ -12,7 +12,11 @@
       <% if offer.user == current_user %>
           <div class="container-card-bookings">
             <div class="container-card-top">
-              <%= image_tag "dummy-painting.jpg"%>
+              <% if offer.art_piece.cloud_image.present? %>
+                <%= cl_image_tag offer.art_piece.cloud_image.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <%= image_tag "dummy-painting.jpg" %>
+              <% end %>
             <div class="wrapper-booking-info">
               <p> <span> <%= offer.art_piece.title %> </span> by <%= offer.art_piece.artist %></p>
               <p> <i class="fa-regular fa-user"></i> Owned by <%= offer.art_piece.user.first_name %> </p>
