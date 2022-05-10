@@ -33,15 +33,23 @@
 .search-form {
   display: flex;
   justify-content: center;
-  margin-left: 150px;
+  padding-left: 60px;
   margin-top: 30px;
-  width: 40rem;
+  width: 50rem;
 }
 
 .container-index{
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+#query {
+  margin-right: 20px;
+}
+
+#style {
+  margin-right: 20px;
 }
 
 .mapboxgl-map{

@@ -12,9 +12,10 @@
         class: "form-control",
         placeholder: "What are you looking for?"
       %>
+      <div class="input-group-text"> <i class="fa-solid fa-caret-down"></i> </div>
       <%= select_tag("style", options_for_select(ArtPiece::STYLES),
                      :prompt=>"Choose an art movement...",
-                     class: "form-control")
+                     class: "form-control select")
       %>
       <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
     <% end %>
