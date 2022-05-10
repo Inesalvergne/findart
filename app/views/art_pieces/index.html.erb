@@ -3,15 +3,23 @@
     <h2> Explore the most beautiful artworks available to rent.</h2>
     <p> FindArt has an extensive selection of artworks. From the most popular artist to rare pieces you could only find here. Browse our collection and select what appeals you the most! </p>
      <!-- Seart artpieces by title and artist -->
+
     <%= form_tag art_pieces_path, method: :get, class:"search-form" do %>
+      <div class="input-group-text"> <i class="fa-solid fa-magnifying-glass"></i> </div>
       <%= text_field_tag :query,
         params[:query],
+        value: params[:query],
         class: "form-control",
         placeholder: "What are you looking for?"
       %>
+      <%= select_tag("style", options_for_select(ArtPiece::STYLES),
+                     :prompt=>"Choose an art movement...",
+                     class: "form-control")
+      %>
       <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
     <% end %>
-  </div>
+
+</div>
 
 <div class="container-index">
 
