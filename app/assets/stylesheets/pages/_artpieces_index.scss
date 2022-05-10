@@ -6,15 +6,13 @@
 }
 
 .header-center{
-  margin: 50px 250px 20px 250px;
+  margin: 50px 250px 50px 250px;
   text-align: center;
   width: 900px;
 }
 
 .container-header-artpieces{
   background-color: #F8F9FA;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
 }
 
 .wrapper-index-cards {
@@ -35,15 +33,23 @@
 .search-form {
   display: flex;
   justify-content: center;
-  margin-left: 250px;
+  padding-left: 60px;
   margin-top: 30px;
-  width: 25rem;
+  width: 50rem;
 }
 
 .container-index{
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+#query {
+  margin-right: 20px;
+}
+
+#style {
+  margin-right: 20px;
 }
 
 .mapboxgl-map{
