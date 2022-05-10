@@ -16,7 +16,7 @@
         </div>
       <% end %>
       <div class="container-card-bottom">
-        <p><b><%= "Incoming bookings: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %></b></p>
+        <p><b><%= "#{pluralize(artpiece.offers.where.not(offer_confirmed: "rejected").count, 'Incoming booking')}" %></b></p>
         <% artpiece.offer_ids.each do |offer_id| %>
           <% offer = Offer.find(offer_id) %>
           <% user = User.find(offer.user_id) %>
