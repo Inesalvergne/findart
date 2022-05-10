@@ -56,7 +56,7 @@ end
 
 puts 'Recreation complete!'
 
-david = ArtPiece.new(title: 'David', artist: 'Michelangelo', address:'391 Rue de la Congrégation, Montreal QC', description: 'David is a masterpiece of Renaissance
+david = ArtPiece.new(title: 'David', artist: 'Michelangelo', address: '391 Rue de la Congrégation, Montreal QC', description: 'David is a masterpiece of Renaissance
 sculpture, created in marble between 1501 and 1504 by the Italian artist Michelangelo. David is a 5.17-metre
 (17 ft 0 in) marble statue of the Biblical figure David, a favoured subject in the art of Florence.',
 creation_date: '1501', category: 'Sculpture', price_rate:  5_000_000, style: 'Renaissance', user: User.first)
