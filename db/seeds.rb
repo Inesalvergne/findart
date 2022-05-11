@@ -45,7 +45,7 @@ david = ArtPiece.new(title: 'David', artist: 'Michelangelo', address: '391 Rue d
 sculpture, created in marble between 1501 and 1504 by the Italian artist Michelangelo. David is a 5.17-metre
 (17 ft 0 in) marble statue of the Biblical figure David, a favoured subject in the art of Florence.',
 creation_date: '1501', category: 'Sculpture', price_rate:  5_000_000, style: 'Renaissance', user: User.first)
-david_image = URI.open("https://en.wikipedia.org/wiki/David_(Michelangelo)#/media/File:Michelangelo's_David_-_right_view_2.jpg")
+david_image = URI.open("https://ca-times.brightspotcdn.com/dims4/default/13d0892/2147483647/strip/true/crop/1317x741+31+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5f%2F42%2Fa4c1c8505270ee3fa59edfc9332d%2Fla-et-cm-michelangelo-david-statue-florence-20-001")
 david.cloud_image.attach(io: david_image, filename: 'David.jpg', content_type: 'image/jpg')
 david.save!
 
@@ -55,7 +55,7 @@ making the sign of the cross with his right hand, while holding a transparent,
 non-refracting crystal orb in his left, signaling his role as Salvator Mundi
 and representing the of the heavens.', creation_date: '1494', category: 'Painting', price_rate: 2_500_000,
 style: 'Renaissance', user: User.first)
-salvator_image = URI.open("https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)#/media/File:Leonardo_da_Vinci,_Salvator_Mundi,_c.1500,_oil_on_walnut,_45.4_%C3%97_65.6_cm.jpg")
+salvator_image = URI.open("https://wp.en.aleteia.org/wp-content/uploads/sites/2/2019/07/web3-salvator-mundi-leonardo-da-vinci-wiki.jpg?w=960&crop=1")
   salvator.cloud_image.attach(io: salvator_image, filename: 'Sal.jpg', content_type: 'image/jpg')
   salvator.save!
 
@@ -65,7 +65,7 @@ by the French Post-Impressionist artist Paul Cézanne. Painted during Cézannes 
 there are five paintings in the series. The versions vary in size,
 the number of players, and the setting in which the game takes place.', creation_date: 1894, category: 'Painting', price_rate: 2_000_000, style: "Post-Impressionism",
 user: User.first)
-card_player_image = URI.open("https://en.wikipedia.org/wiki/The_Card_Players#/media/File:Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg")
+card_player_image = URI.open("https://cdn.kastatic.org/ka-perseus-images/2039a38f6b6d1fe6733aae3d18baf9a014253728.jpg")
 card_players.cloud_image.attach(io: card_player_image, filename: 'CP.jpg', content_type: 'image/jpg')
 card_players.save!
 
@@ -94,7 +94,7 @@ garcon = ArtPiece.new(title: 'Garçon à la Pipe', artist: 'Pablo Picasso', addr
  a garland of flowers on his head, surrounded by two floral decorations",
  creation_date: 1905, category: 'Painting', price_rate: 1_500_000,
  style: "Post-Impressionism", user: User.last)
- garcon_image = URI.open("https://en.wikipedia.org/wiki/Gar%C3%A7on_%C3%A0_la_pipe#/media/File:Gar%C3%A7on_%C3%A0_la_pipe.jpg")
+ garcon_image = URI.open("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/garcon-a-la-pipe-reproductions.jpg")
  garcon.cloud_image.attach(io: garcon_image, filename: 'garcon.jpg', content_type: 'image/jpg')
  garcon.save!
 
@@ -127,7 +127,7 @@ homme_image = URI.open("https://vsemart.com/wp-content/uploads/2015/05/L%E2%80%9
 
 
   balloon_dogs = ArtPiece.new(title: "Balloon Dogs" , address: '3555 Edouard-Montpetit, Montreal QC', artist: "Jeff Koons", description:"Jeff Koons is renowned
-  for making .last replicas of banal, everyday objects. With a price tag of
+  for making replicas of banal, everyday objects. With a price tag of
   $58.4 million, the Balloon Dog by Jeff Koons is the most at which any sculpture
   from a living artist has ever sold!
   The orange Balloon Dog is one of six dogs made of polished stainless steel in various colours.",
