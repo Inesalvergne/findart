@@ -21,7 +21,6 @@
   margin-bottom: 30px;
   padding: 16px;
   box-sizing: content-box;
-
   img{
     width: 120px;
     height: 100%;
@@ -62,10 +61,28 @@
   flex-direction: row;
 }
 
+.booking-accepted {
+  color: $green;
+}
+
+.booking-rejected {
+  color: $red;
+}
+
+.booking-pending {
+  color: $yellow;
+}
+
 .wrapper-booking-info{
   padding: 16px;
 
   span{
     font-weight: bold;
   }
+}
+
+.wrapper-booking-last-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

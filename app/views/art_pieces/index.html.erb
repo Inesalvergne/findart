@@ -1,57 +1,44 @@
 <div class="container-header-artpieces">
   <div class="header-center">
-    <h2> Explore the most beautiful artworks available to rent.</h2>
+    <h2> Explore the Most Beautiful Artworks Available to Rent.</h2>
     <p> FindArt has an extensive selection of artworks. From the most popular artist to rare pieces you could only find here. Browse our collection and select what appeals you the most! </p>
      <!-- Seart artpieces by title and artist -->
-  <%= form_tag art_pieces_path, method: :get, class:"search-form" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "What are you looking for?"
-    %>
-    <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
-  <% end %>
-        <!-- Button trigger modal -->
-    <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Add an Artwork
-    </button> %>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Put your own artworks for rent </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(@artpiece) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :artist %>
-            <%= f.input :cloud_image, as: :file %>
-            <%= f.input :description %>
-            <%= f.input :creation_date %>
-            <%= f.input :category, as: :select, collection: ArtPiece::CATEGORIES %>
-            <%= f.input :style, as: :select, collection: ArtPiece::STYLES %>
-            <%= f.input :address %>
-            <%= f.input :price_rate %>
-            <%= f.submit 'Create Art Piece', class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
+
+    <%= form_tag art_pieces_path, method: :get, class:"search-form" do %>
+      <div class="input-group-text"> <i class="fa-solid fa-magnifying-glass"></i> </div>
+      <%= text_field_tag :query,
+        params[:query],
+        value: params[:query],
+        class: "form-control",
+        placeholder: "What are you looking for?"
+      %>
+      <div class="input-group-text"> <i class="fa-solid fa-caret-down"></i> </div>
+      <%= select_tag("style", options_for_select(ArtPiece::STYLES),
+                     :prompt=>"Choose an art movement...",
+                     class: "form-control select")
+      %>
+      <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
+    <% end %>
+
+    <% if alert %>
+      <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <%= alert %>
       </div>
-    </div>
+     <% end %>
+
   </div>
 
-  <div style="width: 100%; height: 600px;"
+<div class="container-index">
+
+  <div class="wrapper-index-cards">
+    <%= render "shared/cards" %>
+  </div>
+
+  <div class= "wrapper-mapbox";
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-</div>
 
-
-
-
-<div class="container-home-cards">
-  <%= render "shared/cards" %>
 </div>

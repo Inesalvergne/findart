@@ -1,0 +1,49 @@
+<% @artpieces.each do |artpiece| %>
+  <% if artpiece.user == current_user %>
+    <div class="container-card-bookings">
+      <%= link_to art_piece_path(artpiece), class: "text-decoration-none text-dark" do %>
+        <div class="container-card-top">
+          <% if artpiece.cloud_image.present? %>
+            <%= cl_image_tag artpiece.cloud_image.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag "dummy-painting.jpg" %>
+          <% end %>
+          <div class="wrapper-booking-info">
+            <p> <span> <%= artpiece.title %> </span> by <%= artpiece.artist %></p>
+            <p> <i class="fa-regular fa-user"></i> Owned by <%= artpiece.user.first_name %> </p>
+            <p>  Total: $<%= artpiece.price_rate %> </p>
+          </div>
+        </div>
+      <% end %>
+      <div class="container-card-bottom">
+        <p><b><%= "#{pluralize(artpiece.offers.where.not(offer_confirmed: "rejected").count, 'Incoming booking')}" %></b></p>
+        <% artpiece.offer_ids.each do |offer_id| %>
+          <% offer = Offer.find(offer_id) %>
+          <% user = User.find(offer.user_id) %>
+          <% if offer.offer_confirmed != "rejected" %>
+            <div class="container-incoming-booking" id="offer-<%= offer.id %>" >
+              <div class="booking-left">
+                <div class="booking-info-left">
+                  <%= image_tag "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
+                </div>
+                <div class="booking-info-right">
+                  <p><%= "#{user.first_name} #{user.last_name}" %></p>
+                  <p><%= "Date: #{offer.start_date} to #{offer.end_date}" %></p>
+                  <p><%= "Total price: $#{offer.total_price}" %></p>
+                </div>
+              </div>
+              <div class="booking-right">
+                <% if offer.offer_confirmed == "accepted" %>
+                  <p class="booking-accepted"><i class="fas fa-check"></i> Accepted</p>
+                <% else %>
+                  <%= link_to "Accept Offer", accepted_offer_path(offer), remote: true, method: :patch %>
+                  <%= link_to "Reject Offer", rejected_offer_path(offer), remote: true, method: :patch %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
