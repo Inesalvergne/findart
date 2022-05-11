@@ -21,22 +21,7 @@ User.create!(first_name: Faker::Name.first_name,
 
 categories = ['Paintings', 'Sculptures']
 
-MTL_ADDRESSES = [
-  '7503 Rue St Denis, Montreal QC',
-  '251 Av Percival Montreal Ouest QC',
-  '11727 Rue Notre Dame E, Montreal QC',
-  '3708 Rue St Hubert, Montreal QC',
-  '800 Rue Gagne Lasalle QC',
-  '16 Saint-Viateur O., Montreal QC',
-  '4107 Boulevard Saint-Laurent, Montreal QC',
-  '5930 Rue Hurteau, Montreal QC',
-  '6730 44 Av, Montreal QC',
-  '1940 Jolicoeur Street, Montreal QC',
-  '5240 Randall Av, Montreal QC',
-  '3555 Edouard-Montpetit, Montreal QC',
-  '12225 Av de Saint-Castin, Montreal QC',
-  '391 Rue de la Congrégation, Montreal QC'
-]
+
 
 styles = ['Renaissance', 'Conceptual Art', 'Surreal', 'Post-Impressionism', 'Impressionist', 'Expressionist']
 10.times do
@@ -64,15 +49,13 @@ david_image = URI.open("https://en.wikipedia.org/wiki/David_(Michelangelo)#/medi
 david.cloud_image.attach(io: david_image, filename: 'David.jpg', content_type: 'image/jpg')
 david.save!
 
-salvator = ArtPiece.new(title: 'Salvator Mundi', address: '12225 Av de Saint-Castin, Montreal QC', artist:'Leonardo da Vinci', description:
-'The painting depicts Christ in an anachronistic blue Renaissance dress,
+salvator = ArtPiece.new(title: 'Salvator Mundi', address: '12225 Av de Saint-Castin, Montreal QC',
+artist:'Leonardo da Vinci', description:'The painting depicts Christ in an anachronistic blue Renaissance dress,
 making the sign of the cross with his right hand, while holding a transparent,
 non-refracting crystal orb in his left, signaling his role as Salvator Mundi
-and representing the of the heavens.', category: 'Painting', price_rate: '$2,500,000',
+and representing the of the heavens.', creation_date: '2344', category: 'Painting', price_rate: 2_500_000,
 style: 'Renaissance', user: User.first)
-salvator_image = URI.open("https://en.wikipedia.
-  org/wiki/Salvator_Mundi_(Leonardo)#/media/File:Leonardo_da_Vinci,_
-  Salvator_Mundi,_c.1500,_oil_on_walnut,_45.4_%C3%97_65.6_cm.jpg")
+salvator_image = URI.open("https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)#/media/File:Leonardo_da_Vinci,_Salvator_Mundi,_c.1500,_oil_on_walnut,_45.4_%C3%97_65.6_cm.jpg")
   salvator.cloud_image.attach(io: salvator_image, filename: 'Sal.jpg', content_type: 'image/jpg')
   salvator.save!
 
@@ -80,7 +63,7 @@ card_players = ArtPiece.new(title: 'The Card Players', address: '11727 Rue Notre
 a series of oil paintings
 by the French Post-Impressionist artist Paul Cézanne. Painted during Cézannes final period in the early 1890s,
 there are five paintings in the series. The versions vary in size,
-the number of players, and the setting in which the game takes place.', creation_date: 1894, category: 'Painting', price_rate: 2_000_000, style: "Post-Impressionist",
+the number of players, and the setting in which the game takes place.', creation_date: 1894, category: 'Painting', price_rate: 2_000_000, style: "Post-Impressionism",
 user: User.first)
 card_player_image = URI.open("https://en.wikipedia.org/wiki/The_Card_Players#/media/File:Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg")
 card_players.cloud_image.attach(io: card_player_image, filename: 'CP.jpg', content_type: 'image/jpg')
@@ -89,10 +72,8 @@ card_players.save!
 scream = ArtPiece.new(title: "The Scream",  address: '16 Saint-Viateur O., Montreal QC', artist: "Edvard Munch", description: "The Scream is the popular
   name given to a composition created by Norwegian artist Edvard Munch in 1893. The agonized face in the painting has
   become one of the most iconic images of art, seen as symbolizing the anxiety of the human condition.",
-  creation_date: 	1893, category: 'Proto-Expressionism', price_rate: 1_900_000, style:'Expressionist', user: User.first)
-  scream_image = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_
-    The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C
-    _91_x_73_cm%2C_National_Gallery_of_Norway.jpg")
+  creation_date: 	1893, category: 'Paintings', price_rate: 1_900_000, style:'Expressionist', user: User.first)
+  scream_image = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg")
 scream.cloud_image.attach(io: scream_image, filename: 'scream.jpg', content_type: 'image/jpg')
 scream.save!
 
@@ -149,7 +130,7 @@ au-doigt-Pointing-Man-sold-for-126-million-or
   tete.save!
 
 
-  balloon_dogs = ArtPiece.new(title: "Balloon Dogs" , address: '3555 Edouard-Montpetit, Montreal QC',artist: "Jeff Koons", description:"Jeff Koons is renowned
+  balloon_dogs = ArtPiece.new(title: "Balloon Dogs" , address: '3555 Edouard-Montpetit, Montreal QC', artist: "Jeff Koons", description:"Jeff Koons is renowned
   for making .last replicas of banal, everyday objects. With a price tag of
   $58.4 million, the Balloon Dog by Jeff Koons is the most at which any sculpture
   from a living artist has ever sold!
