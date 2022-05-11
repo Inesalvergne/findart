@@ -17,7 +17,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offers_path
     else
-      render :new
+      redirect_to art_piece_path(@offer.art_piece)
     end
   end
 
