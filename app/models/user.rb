@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :offers
   # has_many :art_pieces, through: :offers
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
