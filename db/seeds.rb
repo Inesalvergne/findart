@@ -72,8 +72,8 @@ card_players.save!
 scream = ArtPiece.new(title: "The Scream",  address: '16 Saint-Viateur O., Montreal QC', artist: "Edvard Munch", description: "The Scream is the popular
   name given to a composition created by Norwegian artist Edvard Munch in 1893. The agonized face in the painting has
   become one of the most iconic images of art, seen as symbolizing the anxiety of the human condition.",
-  creation_date: 	1893, category: 'Paintings', price_rate: 1_900_000, style:'Expressionist', user: User.first)
-  scream_image = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg")
+  creation_date: 	1893, category: 'Painting', price_rate: 1_900_000, style:'Expressionist', user: User.first)
+  scream_image = URI.open("https://ychef.files.bbci.co.uk/976x549/p03lcphh.jpg")
 scream.cloud_image.attach(io: scream_image, filename: 'scream.jpg', content_type: 'image/jpg')
 scream.save!
 
@@ -94,20 +94,18 @@ garcon = ArtPiece.new(title: 'Garçon à la Pipe', artist: 'Pablo Picasso', addr
  a garland of flowers on his head, surrounded by two floral decorations",
  creation_date: 1905, category: 'Painting', price_rate: 1_500_000,
  style: "Post-Impressionism", user: User.last)
- garcon_image = URI.open("https://en
- .wikipedia.org/wiki/Gar%C3%A7on_%C3%A0_la_pipe#/media/File:Gar%C3%A7on_%C3%A0_la_pipe.jpg")
+ garcon_image = URI.open("https://en.wikipedia.org/wiki/Gar%C3%A7on_%C3%A0_la_pipe#/media/File:Gar%C3%A7on_%C3%A0_la_pipe.jpg")
  garcon.cloud_image.attach(io: garcon_image, filename: 'garcon.jpg', content_type: 'image/jpg')
  garcon.save!
 
 
-gachet = ArtPiece.create(title: 'Portrait of Dr. Gachet',  address:  '251 Av Percival Montreal Ouest QC',artist: 'Vincent van Gogh', description:"Portrait of
+gachet = ArtPiece.new(title: 'Portrait of Dr. Gachet',  address:  '251 Av Percival Montreal Ouest QC',artist: 'Vincent van Gogh', description:"Portrait of
   Dr. Gachet is one of the most revered paintings by the Dutch artist Vincent van Gogh.
   It depicts Dr. Paul Gachet, a homeopathic doctor and artist
   with whom van Gogh resided following a spell in an asylum at Saint-Rémy-de-Provence.",
-  creation_date: 1890, category: "Painting", price_rate: 1_100_000, style: "Post-Impressionism", user: User.last,
-  image_url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Portrait_of_Dr._Gachet.jpg")
+  creation_date: 1890, category: "Painting", price_rate: 1_100_000, style: "Post-Impressionism", user: User.last)
  gachet_image = URI.open("https://www.artnews.com/wp-content/uploads/2019/04/unnamed-1.png")
-  gachet.cloud_image.attach(io: gachet_image, filename: 'gachet.jpg', content_type: 'image/jpg')
+  gachet.cloud_image.attach(io: gachet_image, filename: 'gachet.jpg', content_type: 'image/png')
   gachet.save!
 
   homme = ArtPiece.new(title: "L'Homme au doigt (Pointing Man)",  address: '1940 Jolicoeur Street, Montreal QC',artist: "Alberto Giacometti", description:"Passionate about sculpture
@@ -115,9 +113,7 @@ gachet = ArtPiece.create(title: 'Portrait of Dr. Gachet',  address:  '251 Av Per
   limestone. It was sold for $59.5 million to a private collector in 2010.",
   creation_date: 1947, category: "Sculpture", price_rate: 950_000, style: "Surreal", user: User.last)
 
-homme_image = URI.open = "https://vsemart.com/wp-content/uploads/2015/05/L%E2%80%99homme-
-au-doigt-Pointing-Man-sold-for-126-million-or
--141.3-million-with-fees-in-Christies-May-11-2015.jpg"
+homme_image = URI.open("https://vsemart.com/wp-content/uploads/2015/05/L%E2%80%99homme-au-doigt-Pointing-Man-sold-for-126-million-or-141.3-million-with-fees-in-Christies-May-11-2015.jpg")
   homme.cloud_image.attach(io: homme_image, filename: 'homme.jpg', content_type: 'image/jpg')
   homme.save!
 
@@ -137,8 +133,6 @@ au-doigt-Pointing-Man-sold-for-126-million-or
   The orange Balloon Dog is one of six dogs made of polished stainless steel in various colours.",
   creation_date: 1994, category: "Sculpture", price_rate: 900_000, style: "Conceptual Art", user: User.last)
 
-  balloon_dogs = URI.open("https://publicdelivery.org/wp-content/uploads/2017/02/Jeff-Koons-Balloon-Dog-Blue-1994
-  -high-chromium-stainless-steel-transparent-
-  color-coating-installation-view-Broad-Art-Foundation-LACMA-Los-Angeles.jpg")
+  balloon_dogs_image = URI.open("https://publicdelivery.org/wp-content/uploads/2017/02/Jeff-Koons-Balloon-Dog-Blue-1994-high-chromium-stainless-steel-transparent-color-coating-installation-view-Broad-Art-Foundation-LACMA-Los-Angeles.jpg")
   balloon_dogs.cloud_image.attach(io: balloon_dogs_image, filename: 'balloon_dogs.jpg', content_type: 'image/jpg')
   balloon_dogs.save!
