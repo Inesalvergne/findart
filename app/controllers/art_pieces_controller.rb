@@ -24,7 +24,8 @@ class ArtPiecesController < ApplicationController
     @markers = @artpieces.geocoded.map do |artpiece|
       {
         lat: artpiece.latitude,
-        lng: artpiece.longitude
+        lng: artpiece.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { artpiece: artpiece })
       }
     end
 
