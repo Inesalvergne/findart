@@ -2,12 +2,21 @@ class ArtPiecesController < ApplicationController
   skip_before_action :authenticate_user!, only: %I[index show]
 
   def index
-    if params[:query].present? && params[:style].present?
+    if ArtPiece.search_by_title_and_artist(params[:query]).empty? && ArtPiece.where("style = ?", params[:style]).empty?
+      @artpieces = ArtPiece.all
+      flash.alert = "Sorry, we couldn't find this... Keep exploring!"
+    elsif params[:query].present? && params[:style].present?
       @artpieces = ArtPiece.search_by_title_and_artist(params[:query]).where("style = ?", params[:style])
     elsif params[:query].present?
       @artpieces = ArtPiece.search_by_title_and_artist(params[:query])
     elsif params[:style].present?
       @artpieces = ArtPiece.where("style = ?", params[:style])
+    elsif ArtPiece.search_by_title_and_artist(params[:query]).empty?
+      @artpieces = ArtPiece.all
+      flash.alert = "Sorry, we couldn't find this... Keep exploring!"
+    elsif ArtPiece.where("style = ?", params[:style]).empty?
+      @artpieces = ArtPiece.all
+      flash.alert = "Sorry, we couldn't find this... Keep exploring!"
     else
       @artpieces = ArtPiece.all
     end

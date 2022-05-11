@@ -20,7 +20,14 @@
       <%= submit_tag "Find artworks", class: "submit btn btn-primary" %>
     <% end %>
 
-</div>
+    <% if alert %>
+      <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <%= alert %>
+      </div>
+     <% end %>
+
+  </div>
 
 <div class="container-index">
 
