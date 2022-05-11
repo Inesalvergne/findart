@@ -104,8 +104,8 @@ gachet = ArtPiece.new(title: 'Portrait of Dr. Gachet',  address:  '251 Av Perciv
   It depicts Dr. Paul Gachet, a homeopathic doctor and artist
   with whom van Gogh resided following a spell in an asylum at Saint-Rémy-de-Provence.",
   creation_date: 1890, category: "Painting", price_rate: 1_100_000, style: "Post-Impressionism", user: User.last)
- gachet_image = URI.open("https://www.artnews.com/wp-content/uploads/2019/04/unnamed-1.png")
-  gachet.cloud_image.attach(io: gachet_image, filename: 'gachet.jpg', content_type: 'image/png')
+ gachet_image = URI.open("https://upload.wikimedia.org/wikipedia/commons/1/1e/Portrait_of_Dr._Gachet.jpg")
+  gachet.cloud_image.attach(io: gachet_image, filename: 'gachet.jpg', content_type: 'image/jpg')
   gachet.save!
 
   homme = ArtPiece.new(title: "L'Homme au doigt (Pointing Man)",  address: '1940 Jolicoeur Street, Montreal QC',artist: "Alberto Giacometti", description:"Passionate about sculpture
