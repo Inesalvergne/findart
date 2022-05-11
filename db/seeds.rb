@@ -53,7 +53,7 @@ salvator = ArtPiece.new(title: 'Salvator Mundi', address: '12225 Av de Saint-Cas
 artist:'Leonardo da Vinci', description:'The painting depicts Christ in an anachronistic blue Renaissance dress,
 making the sign of the cross with his right hand, while holding a transparent,
 non-refracting crystal orb in his left, signaling his role as Salvator Mundi
-and representing the of the heavens.', creation_date: '2344', category: 'Painting', price_rate: 2_500_000,
+and representing the of the heavens.', creation_date: '1494', category: 'Painting', price_rate: 2_500_000,
 style: 'Renaissance', user: User.first)
 salvator_image = URI.open("https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)#/media/File:Leonardo_da_Vinci,_Salvator_Mundi,_c.1500,_oil_on_walnut,_45.4_%C3%97_65.6_cm.jpg")
   salvator.cloud_image.attach(io: salvator_image, filename: 'Sal.jpg', content_type: 'image/jpg')
