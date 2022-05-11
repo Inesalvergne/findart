@@ -16,12 +16,12 @@
         </div>
       <% end %>
       <div class="container-card-bottom">
-        <p><b><%= "Incoming bookings: #{artpiece.offers.where.not(offer_confirmed: "rejected").count}" %></b></p>
+        <p><b><%= "#{pluralize(artpiece.offers.where.not(offer_confirmed: "rejected").count, 'Incoming booking')}" %></b></p>
         <% artpiece.offer_ids.each do |offer_id| %>
           <% offer = Offer.find(offer_id) %>
           <% user = User.find(offer.user_id) %>
           <% if offer.offer_confirmed != "rejected" %>
-            <div class="container-incoming-booking">
+            <div class="container-incoming-booking" id="offer-<%= offer.id %>" >
               <div class="booking-left">
                 <div class="booking-info-left">
                   <%= image_tag "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
@@ -36,8 +36,8 @@
                 <% if offer.offer_confirmed == "accepted" %>
                   <p class="booking-accepted"><i class="fas fa-check"></i> Accepted</p>
                 <% else %>
-                  <%= link_to "Accept Offer", accepted_offer_path(offer),  method: :patch %>
-                  <%= link_to "Reject Offer", rejected_offer_path(offer),  method: :patch %>
+                  <%= link_to "Accept Offer", accepted_offer_path(offer), remote: true, method: :patch %>
+                  <%= link_to "Reject Offer", rejected_offer_path(offer), remote: true, method: :patch %>
                 <% end %>
               </div>
             </div>
