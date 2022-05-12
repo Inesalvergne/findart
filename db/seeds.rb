@@ -39,10 +39,41 @@ User.create!(first_name: Faker::Name.first_name,
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
              email: 'user9@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user10@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user11@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user12@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user13@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user14@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user15@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user16@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user17@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user18@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user19@mailmail.com', password: '1234567')
+User.create!(first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             email: 'user20@mailmail.com', password: '1234567')
 
 categories = ['Paintings', 'Sculptures']
-
-
 
 styles = ['Renaissance', 'Conceptual Art', 'Surreal', 'Post-Impressionism', 'Impressionist', 'Expressionist']
 10.times do
