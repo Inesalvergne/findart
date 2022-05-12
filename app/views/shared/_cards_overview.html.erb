@@ -6,7 +6,7 @@
         <% else %>
           <%= link_to image_tag("https://source.unsplash.com/random/?painting", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
         <% end %>
-        <div class="card-text">
+        <div class="card-text-upper">
           <div class="card-header-row">
             <h3><%= link_to artpiece.title, art_piece_path(artpiece), class: "card-title" %></h3>
             <h4 class="card-price"><%= "$#{artpiece.price_rate}/day" %></h4>
