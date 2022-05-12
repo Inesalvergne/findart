@@ -14,83 +14,83 @@ puts 'Destruction complete!'
 puts 'Recreating stuff now...'
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=123",
              email: 'user1@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=132",
              email: 'user2@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=143",
              email: 'user3@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=153",
              email: 'user4@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=423",
              email: 'user5@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=193",
              email: 'user6@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=183",
              email: 'user7@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=125",
              email: 'user8@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=129",
              email: 'user9@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=120",
              email: 'user10@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=199",
              email: 'user11@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=923",
              email: 'user12@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=523",
              email: 'user13@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=923",
              email: 'user14@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=223",
              email: 'user15@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=993",
              email: 'user16@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=853",
              email: 'user17@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=233",
              email: 'user18@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=553",
              email: 'user19@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
-             image_url: "https://source.unsplash.com/random/?face",
+             image_url: "https://source.unsplash.com/random/?face?sig=999",
              email: 'user20@mailmail.com', password: '1234567')
 
 categories = ['Paintings', 'Sculptures']
