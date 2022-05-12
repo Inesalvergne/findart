@@ -18,7 +18,11 @@
             <p><%= artpiece.style %></p>
           </div>
           <div class="card-user-row">
-            <%= image_tag artpiece.user.image_url , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
+            <% if artpiece.user.image_url.nil? %>
+              <%= image_tag "https://source.unsplash.com/random/?face?sig=789" , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
+            <% else %>
+              <%= image_tag artpiece.user.image_url , alt: "#{artpiece.user.first_name} #{artpiece.user.last_name}" , class: "avatar" %>
+            <% end %>
             <p><%= "#{artpiece.user.first_name} #{artpiece.user.last_name}" %></p>
           </div>
         </div>
