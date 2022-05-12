@@ -34,8 +34,11 @@
 
 // ONLY FOR HOME PAGE AND SHOW PAGE
 .card-overview {
+  display: flex;
+  flex-direction: column;
   width: 350px;
   border: rgb(238, 238, 238) 1px solid;
+  justify-content: space-between;
 }
 
 .card-img {
