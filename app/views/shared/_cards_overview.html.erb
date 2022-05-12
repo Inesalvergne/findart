@@ -1,7 +1,11 @@
   <div class="grid-cards">
     <% @artpieces.each do |artpiece| %>
       <div class="card-overview">
-        <%= link_to image_tag("https://source.unsplash.com/random/?painting", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
+          <% if artpiece.cloud_image.present? %>
+          <%= link_to cl_image_tag(artpiece.cloud_image.key, crop: :fill, alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
+        <% else %>
+          <%= link_to image_tag("https://source.unsplash.com/random/?painting", alt: "#{artpiece.title} by #{artpiece.artist}", class: "card-img"), art_piece_path(artpiece) %>
+        <% end %>
         <div class="card-text">
           <div class="card-header-row">
             <h3><%= link_to artpiece.title, art_piece_path(artpiece), class: "card-title" %></h3>

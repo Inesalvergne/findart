@@ -125,7 +125,7 @@ scream = ArtPiece.new(title: "The Scream",  address: '16 Saint-Viateur O., Montr
   name given to a composition created by Norwegian artist Edvard Munch in 1893. The agonized face in the painting has
   become one of the most iconic images of art, seen as symbolizing the anxiety of the human condition.",
   creation_date: 	1893, category: 'Painting', price_rate: 1_900_000, style:'Expressionist', user: User.all.sample)
-  scream_image = URI.open("https://ychef.files.bbci.co.uk/976x549/p03lcphh.jpg")
+  scream_image = URI.open("https://www.edvardmunch.org/images/paintings/the-scream.jpg")
 scream.cloud_image.attach(io: scream_image, filename: 'scream.jpg', content_type: 'image/jpg')
 scream.save!
 
