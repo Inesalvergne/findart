@@ -14,84 +14,88 @@ puts 'Destruction complete!'
 puts 'Recreating stuff now...'
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=123",
              email: 'user1@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=132",
              email: 'user2@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=143",
              email: 'user3@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=153",
              email: 'user4@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=423",
              email: 'user5@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=193",
              email: 'user6@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=183",
              email: 'user7@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=125",
              email: 'user8@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=129",
              email: 'user9@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=120",
              email: 'user10@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=199",
              email: 'user11@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=923",
              email: 'user12@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=523",
              email: 'user13@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=923",
              email: 'user14@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=223",
              email: 'user15@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=993",
              email: 'user16@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=853",
              email: 'user17@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=233",
              email: 'user18@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=553",
              email: 'user19@mailmail.com', password: '1234567')
 User.create!(first_name: Faker::Name.first_name,
              last_name: Faker::Name.last_name,
+             image_url: "https://source.unsplash.com/random/?face?sig=999",
              email: 'user20@mailmail.com', password: '1234567')
 
 categories = ['Paintings', 'Sculptures']
 
 styles = ['Renaissance', 'Conceptual Art', 'Surreal', 'Post-Impressionism', 'Impressionist', 'Expressionist']
-10.times do
-  image = URI.open("https://source.unsplash.com/random/900x700/?artwork")
-  artpiece = ArtPiece.new(
-    title: Faker::Name.name,
-    artist: Faker::Artist.name,
-    description: Faker::Lorem.paragraph,
-    creation_date: Faker::Date.in_date_period,
-    category: categories.sample,
-    address: Faker::Address.street_address,
-    price_rate: (1..100).to_a.sample,
-    style: styles.sample,
-    user: User.all.sample
-  )
-end
-
-puts 'Recreation complete!'
 
 david = ArtPiece.new(title: 'David', artist: 'Michelangelo', address: '391 Rue de la Congrégation, Montreal QC', description: 'David is a masterpiece of Renaissance
 sculpture, created in marble between 1501 and 1504 by the Italian artist Michelangelo. David is a 5.17-metre
@@ -188,3 +192,5 @@ homme_image = URI.open("https://vsemart.com/wp-content/uploads/2015/05/L%E2%80%9
   balloon_dogs_image = URI.open("https://publicdelivery.org/wp-content/uploads/2017/02/Jeff-Koons-Balloon-Dog-Blue-1994-high-chromium-stainless-steel-transparent-color-coating-installation-view-Broad-Art-Foundation-LACMA-Los-Angeles.jpg")
   balloon_dogs.cloud_image.attach(io: balloon_dogs_image, filename: 'balloon_dogs.jpg', content_type: 'image/jpg')
   balloon_dogs.save!
+
+  puts 'Recreation complete!'
