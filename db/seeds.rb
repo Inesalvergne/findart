@@ -193,4 +193,99 @@ homme_image = URI.open("https://vsemart.com/wp-content/uploads/2015/05/L%E2%80%9
   balloon_dogs.cloud_image.attach(io: balloon_dogs_image, filename: 'balloon_dogs.jpg', content_type: 'image/jpg')
   balloon_dogs.save!
 
-  puts 'Recreation complete!'
+  memory = ArtPiece.new(title: "The Persistence of Memory",
+                        address:'4230 rue Levy, Montreal QC',
+                        artist: 'Salvador Dali',
+                        description:"The Persistence of Memory (1931) is one of the most iconic and recognizable paintings of Surrealism. You're guaranteed to amaze people with this!",
+                        creation_date: 1931,
+                        category: "Painting",
+                        price_rate: 2_800_000,
+                        style:"Surreal",
+                        user: User.all.sample)
+memory_image = URI.open('https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg')
+memory.cloud_image.attach(io: memory_image, filename: 'memory.jpg', content_type: 'image/jpg')
+memory.save!
+
+gooseflesh = ArtPiece.new(title: "Inaugural Gooseflesh",
+                          address:'2606 René-Lévesque Blvd, Montreal QC',
+                          artist: 'Salvador Dali',
+                          description:"This is one of Dali's most subtle but successful Surrealist Composition. Rent it for your surrealist parties!",
+                          creation_date: 1928,
+                          category: "Painting",
+                          price_rate: 1_200_000,
+                          style:"Surreal",
+                          user: User.all.sample)
+gooseflesh_image = URI.open('https://uploads5.wikiart.org/images/salvador-dali/inaugural-gooseflesh.jpg!Large.jpg')
+gooseflesh.cloud_image.attach(io: gooseflesh_image, filename: 'gooseflesh.jpg', content_type: 'image/jpg')
+gooseflesh.save!
+
+venus = ArtPiece.new(title: "The Birth of Venus",
+                    address:'4313 rue Ontario Ouest, Montreal QC',
+                    artist: 'Boticelli',
+                    description:"The painting was commissioned by Lorenzo di Pierfrancesco de’Medici, a cousin of Lorenzo the Magnificent. The theme was probably suggested by the humanist Poliziano. It depicts Venus born from the sea foam, blown by the west wind, Zephyr, and the nymph, Chloris, towards one of the Horai, who prepares to dress her with a flowered mantle.",
+                    creation_date: 1483,
+                    category: "Painting",
+                    price_rate: 5_200_000,
+                    style:"Renaissance",
+                    user: User.all.sample)
+venus_image = URI.open('https://artincontext.org/wp-content/uploads/2021/09/The-Birth-of-Venus-Botticelli-848x530.jpg')
+venus.cloud_image.attach(io: venus_image, filename: 'venus.jpg', content_type: 'image/jpg')
+venus.save!
+
+magpie = ArtPiece.new(title: "The Magpie",
+                    address:'3765 chemin Hudson, Montreal QC',
+                    artist: 'Claude Monet',
+                    description:"This painting shows the artist's mastery of capturing the effects of light on nature.",
+                    creation_date: 1869,
+                    category: "Painting",
+                    price_rate: 1_100_000,
+                    style:"Impressionist",
+                    user: User.all.sample)
+magpie_image = URI.open('https://www.worldhistory.org/img/r/p/750x750/15586.png.webp?v=1648653102')
+magpie.cloud_image.attach(io: magpie_image, filename: 'magpie.jpg', content_type: 'image/jpg')
+magpie.save!
+
+
+cat = ArtPiece.new(title: "The Scream of the Cat",
+                  address:'4812 Papineau Avenue, Montreal QC',
+                  artist: 'Anonymous',
+                  description:"A unique masterpiece that will keep your guests entertained. Rent it now!",
+                  creation_date: 2022,
+                  category: "Painting",
+                  price_rate: 8_100_000,
+                  style:"Surreal",
+                  user: User.all.sample)
+cat_image = URI.open('https://cherscholar.typepad.com/.a/6a00d8341d6c7753ef025d9b3bbeca200c-pi')
+cat.cloud_image.attach(io: cat_image, filename: 'cat.jpg', content_type: 'image/jpg')
+cat.save!
+
+fountain = ArtPiece.new(title: "Fountain",
+                        address:'5333 Casgrain, Montreal QC',
+                        artist: 'March Duchamp',
+                        description:"The Urinal photograph is really quite a wonder – Everyone who has seen it thinks it beautiful – And it’s true – it is. It has an oriental look about it – a cross between a Buddha and a veiled woman",
+                        creation_date: 1917,
+                        category: "Sculpture",
+                        price_rate: 3_000_000,
+                        style:"Conceptual Art",
+                        user: User.all.sample)
+fountain_image = URI.open('https://niood.es/wp-content/uploads/2021/10/marcel-duchamp-fountain-niood-1.jpeg')
+fountain.cloud_image.attach(io: fountain_image, filename: 'cat.jpg', content_type: 'image/jpg')
+fountain.save!
+
+
+
+apple = ArtPiece.new(title: "The Son of Man",
+                    address:'1401 rue de la Gauchetière, Montreal QC',
+                    artist: 'René Magritte',
+                    description:"Magritte painted The Son of Man as a self-portrait. The painting consists of a man in an overcoat and a bowler hat standing in front of a short wall, beyond which is the sea and a cloudy sky",
+                    creation_date: 1964,
+                    category: "Painting",
+                    price_rate: 600_000,
+                    style:"Surreal",
+                    user: User.all.sample)
+apple_image = URI.open('https://www.renemagritte.org/images/paintings/son-of-man.jpg')
+apple.cloud_image.attach(io: apple_image, filename: 'apple.jpg', content_type: 'image/jpg')
+apple.save!
+
+
+puts 'Recreation complete!'
