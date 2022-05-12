@@ -9,6 +9,7 @@
 .card {
   display: flex;
   width: 250px;
+  justify-content: space-between;
 }
 
 .card:hover{
@@ -42,8 +43,12 @@
   object-fit: cover;
 }
 
-.card-text {
-  padding: 20px 12px;
+.card-text-upper {
+  padding: 20px 12px 0 12px;
+}
+
+.card-text-lower {
+  padding: 0 12px 20px 12px;
 }
 
 .card-header-row {
@@ -58,6 +63,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 6px;
+  flex: none;
 }
 
 .card-categories {
