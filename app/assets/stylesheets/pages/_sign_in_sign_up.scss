@@ -1,0 +1,17 @@
+.container-devise {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-border {
+  border-radius: 8px;
+  border: 1px solid rgb(241, 241, 241);
+  padding: 40px;
+}
+
+.devise-form {
+  width: 400px;
+}
