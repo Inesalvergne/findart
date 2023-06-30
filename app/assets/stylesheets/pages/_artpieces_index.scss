@@ -12,8 +12,9 @@
 }
 
 .container-header-artpieces{
-  //background-color: #F8F9FA;
-  background-color: $beige;
+  background-color: #F8F9FA;
+  // background-color: $beige;
+  border-top: 1px solid rgb(241, 241, 241);
 }
 
 .wrapper-index-cards {
@@ -44,7 +45,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
-  background-color: $light-gray;
+  background-color: white;
 }
 
 #query {
