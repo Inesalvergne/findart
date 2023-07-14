@@ -3,3 +3,5 @@ FindArt is a marketplace to rent famous art pieces. The features include a booki
 This application was developed in 5 days, as part of Le Wagon bootcamp, using the framework Ruby on Rails. 
 
 Additional technologies used: PostgreSQL, SCSS, Boostrap, Stimulus JavaScript.
+
+👉 [Visit the app](https://findart.herokuapp.com/)
